@@ -1,711 +1,267 @@
-/* Add only the requested styles */
-body {
+/* =========================================
+   Recipient Dashboard - Blue Theme
+   ========================================= */
+
+body, html {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  overflow-y: auto; /* Makes the page scrollable */
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  overflow-x: hidden;
 }
 
-.logo {
-  width: 100px;
-  opacity: 0; /* Start invisible for fade-in */
-  animation: fadeIn 1.5s ease-out forwards; /* Fade-in animation */
-  position: relative; /* Required for top/left positioning */
-  left: 50px;
-  top: 30px;
+/* --- Header --- */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.header-left { display: flex; align-items: center; gap: 15px; }
+.logo { width: 60px; height: auto; }
+.header-title { display: flex; flex-direction: column; line-height: 1.1; }
+.title-top { font-size: 24px; font-weight: 800; color: #4AA8D0; }
+.title-bottom { font-size: 20px; font-weight: 600; color: #333; }
+.btn-logout { background-color: #940404; color: white; border: none; padding: 10px 30px; border-radius: 25px; font-weight: 700; font-size: 20px; cursor: pointer; transition: background 0.2s; }
+.btn-logout:hover { background-color: #7a0303; }
+
+/* --- Main Layout --- */
+.main-container {
+  max-width: 1400px; /* Matching the Compact Donor Layout */
+  margin: 0 auto;
+  padding: 10px 40px 60px 40px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Fade-in animation definition */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* === BANNER SECTION === */
+.welcome-banner-wrapper { position: relative; }
 
-/* Donor.css */
-
- .donor-dashboard {
-  width: 284px;
-  height: 61px;
-  position: relative;
-  font-size: 40px;
-  line-height: 35px;
-  display: inline-block;
-  font-family: 'Inter_28pt_Bold', sans-serif; /* ✅ FIXED */
-  text-align: left;
-  color: #4AA8D0;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
-  top: 10px;
-  left: 40px;
-  animation: fadeIn 1.5s ease-out forwards; 
-}
-
-
-@font-face {
-    font-family: 'Inter_28pt_Bold';
-    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-.dashboard {
-  color: rgba(0, 0, 0, 0.8);
-}
-
-.submit-button {
-  width: 8%; /* Changed from 100% to match other elements */
-  height: 45px;
-  background-color: #4AA8D0;
-  color: white;
-  border: none;
-  border-radius: 100px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  position: absolute;
-  top: 70px; /* Move down to bottom area */
-  left: 1700px; /* Fixed: Added "px" unit */
-  z-index: 5;
-}
-
-.submit-button:hover {
-  background-color: gray;
-  transform: translateY(-2px);
-}
-
-.submit-button:active {
-  transform: translateY(0);
-}
-
-.rectangle-div {
-  	width: 90%;
-  	height: 270px;
-  	position: relative;
-  	border-radius: 20px;
-  	background-color: #f3f1ef;
-    left: 80px;
-    top: 40px;
-    transition: background-color 0.3s ease; /* Smooth transition */
-      box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1),
-                inset 0 -2px 4px rgba(255, 255, 255, 0.8);
-}
-
-/*.rectangle-div:hover {
-  background-color: rgb(228, 224, 224); /* Change to darkgray on hover 
-} */
-
-.hi-maria-santos-container {
-  	width: 568px;
-  	height: 53px;
-  	position: relative;
-  	font-size: 55px;
-  	line-height: 25px;
-  	display: inline-block;
-  	font-family: Inter_28pt_Bold;
-  	text-align: left;
-  	color: rgba(0, 0, 0, 0.8);
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
-    top: -180px;   /* adjust: -10px / -20px / -30px */
-    left: 120px;
-    animation: fadeIn 1.5s ease-out forwards; 
-}
-
-@font-face {
-    font-family: 'Inter_28pt_Bold';
-    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-
-.maria-santos {
-  	color:#4AA8D0;
-}
-
-.registered-donor-container {
-  	width: 606px;
-  	height: 77px;
-  	position: relative;
-  	font-size: 32px;
-  	line-height: 40px;
-  	text-align: left;
-  	display: inline-block;
-  	color: rgba(0, 0, 0, 0.8);
-  	font-family: Inter_28pt_Bold;
-    top: -130px;   /* adjust: -10px / -20px / -30px */
-    right: 450px;
-    animation: fadeIn 1.5s ease-out forwards; 
-}
-@font-face {
-    font-family: 'Inter_28pt_Bold';
-    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-.status {
-  	font-family: Inter_28pt_Bold;
-    top: -185px;   /* adjust: -10px / -20px / -30px */
-    right: 450px;
-    animation: fadeIn 1.5s ease-out forwards; 
-    font-size: 32px;
-}
-@font-face {
-    font-family: 'Inter_28pt_Bold';
-    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-.active {
-  	color: #529e57;
-    font-size: 32px;
-    transform: translateY(-50px);
-}
-
-.submit-button-donorprof {
-  width: 25%; /* Changed from 100% to match other elements */
-  height: 60px;
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 100px;
-  font-size: 25px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  position: absolute;
-  top: 300px; /* Move down to bottom area */
-  right: 1320px; /* Fixed: Added "px" unit */
-  z-index: 5;
-
-}
-
-.submit-button-continuedonorform {
-  width: 20%; /* Changed from 100% to match other elements */
-  height: 50px;
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 100px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  position: absolute;
-  top: 180px; /* Move down to bottom area */
-  left: 1380px; /* Fixed: Added "px" unit */
-  z-index: 5;
-}
-
-.submit-button-continuedonorform:hover {
-  background-color: gray;
-  transform: translateY(-2px);
-}
-
-.submit-button-continuedonorform:active {
-  transform: translateY(0);
-}
-
-.files-red {
-  width: 18%; /* Changed to 20% width */
-  position: absolute; /* Changed to absolute for positioning */
-  right: 0; /* Position to the right */
-  border-radius: 25px;
-  overflow: hidden;
-  max-height: 100%;
-  object-fit: cover;
-  top: 170px; /* Move down to bottom area */
-  left: 1460px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
-   animation: fadeIn 1.5s ease-out forwards;
-}
-
-.rectangle-div-second {
-  	width: 50%;
-  	height: 317px;
-  	position: relative;
-  	border-radius: 20px;
-  	background-color: #f3f1ef;
-    left: 80px;
-    top: -35px;
-}
-
-.rectangle-div-third {
-  	width: 40%;
-  	height: 317px;
-  	position: relative;
-  	border-radius: 20px;
-  	background-color: #4AA8D0;
-    left: 1050px;
-    top: -350px;
-}
-
-.donor-status-container {
-  width: 568px;
-  height: 53px;
-  position: absolute; /* Changed from relative to absolute */
-  font-size: 45px;
-  line-height: 25px;
-  display: inline-block;
-  font-family: 'Inter_28pt_Bold', sans-serif;
-  text-align: left;
-  color: #4AA8D0;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
-  top: 55%; /* Changed from 100% to 50% for vertical middle */
-  left: 120px; /* Distance from left for middle left */
-  transform: translateY(-50%); /* Adjust for true vertical centering */
-  animation: fadeIn 1.5s ease-out forwards;
-}
-
-@font-face {
-    font-family: 'Inter_28pt_Bold';
-    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-.profile-90-complete-container {
-  width: 606px;
-  height: 77px;
-  position: absolute; /* Changed from relative to absolute */
-  font-size: 32px;
-  line-height: 40px;
-  color: rgba(0, 0, 0, 0.8);
-  text-align: left;
-  display: inline-block;
-  font-family: 'Inter_28pt_Medium', sans-serif; /* Fixed font family */
-  top: 540px; /* Changed from -620px to positive value */
-  left: 120px; /* Changed from right: 450px to left: 50px */
-  z-index: 10; /* Ensure it's visible */
-}
-
-@font-face {
-  font-family: 'Inter_28pt_Medium';
-  src: url('Inter/Inter_28pt-Medium.ttf') format('truetype');
-  font-weight: 500; /* Changed from 900 to 500 for Medium */
-  font-style: normal;
-}
-
-.status-red {
-  width: 20%; /* Changed to 20% width */
-  position: absolute; /* Changed to absolute for positioning */
-  right: 0; /* Position to the right */
-  border-radius: 25px;
-  overflow: hidden;
-  max-height: 100%;
-  object-fit: cover;
-  top: 390px; /* Move down to bottom area */
-  left: 650px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
-  z-index: 10;
-  animation: fadeIn 1.5s ease-out forwards;
-}
-
-.submit-button-nextreview-due {
-  width: 30%; /* Changed from 100% to match other elements */
-  height: 80px;
-  background-color: #4AA8D0;
-  color: white;
-  border: none;
-  border-radius: 100px;
-  font-size: 25px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  position: absolute;
-  top: 630px; /* Move down to bottom area */
-  right: 1220px; /* Fixed: Added "px" unit */
-  z-index: 20;
-}
-
-/*.submit-button-nextreview-due:hover {
-  background-color: gray;
-  transform: translateY(-2px);
-} 
-
-.submit-button-nextreview-due:active {
-  transform: translateY(0);
-} */
-
-.rectangle-div-fourth {
-  width: 50%;
-  height: 100px;
-  position: absolute; /* Changed from 'flex' to 'absolute' */
+.gray-banner {
+  background-color: #f3f1ef;
   border-radius: 20px;
-  background-color: #f3f1ef;
-  left: 80px;
-  top: 770px; /* Negative value moves it upward */
-}
-
-.rectangle-div-fourth:hover {
-  background-color: rgb(202, 199, 199);
-  transform: translateY(-3px);
-} 
-
-.quick-actions {
-  width: 331px;
-  height: 37px;
-  position: absolute; /* Changed from relative to absolute */
-  font-size: 32px;
-  line-height: 35px;
-  display: inline-block;
-  font-family: Inter_28pt_Bold;
-  color: rgba(0, 0, 0, 0.8);
-  left: 420px; /* Distance from left */
-  top: 87%; /* Position at vertical middle */
-  transform: translateY(-50%); /* Adjust to truly center vertically */
-  z-index: 20;
-}
-
-@font-face {
-  font-family: 'Inter_28pt_Bold';
-  src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-.rectangle-div-fifth {
-  width: 50%;
-  height: 350px;
-  position: absolute; /* Changed from 'flex' to 'absolute' */
-  border-radius: 20px;
-  background-color: #f3f1ef;
-  left: 80px;
-  top: 880px; /* Negative value moves it upward */
-  z-index: 20;
-}
-
-.donor-actions-container {
-  position: absolute;
-  left: 360px;
-  top: 915px;
-  z-index: 20;
-}
-
-/* Button styling with outline and alignment */
-.continue-donor-form-1,
-.continue-donor-form-2,
-.continue-donor-form-3,
-.continue-donor-form-4 {
-  width: 448px;
-  height: 60px; /* Fixed height for button look */
+  padding: 30px 50px;
   position: relative;
-  font-size: 35px;
-  line-height: 60px; /* Match height for vertical centering */
-  display: block; /* Each on new line */
-  font-family: 'Inter_24pt_SemiBold', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
-  text-align: left;
-  margin-bottom: 5px; /* Reduced space between buttons */
-  animation: fadeIn 1.5s ease-out forwards;
-  /* Button styling */
-  background-color: #f3f1ef;
-  border-radius: 15px;
-  padding-left: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  
-  /* Ensure left alignment */
-  margin-left: 0;
-  padding-right: 20px;
-  box-sizing: border-box;
-  
-  /* Remove outline/border */
-  border: none;
-  outline: none;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
 }
 
-/* Create the illusion of buttons being connected */
-.continue-donor-form-1 {
-  border-radius: 15px 15px 0 0; /* Top rounded */
-}
+.banner-text-content { max-width: 60%; z-index: 2; }
+.banner-text-content h1 { font-size: 42px; margin: 0 0 5px 0; font-weight: 900; color: #333; }
 
-.continue-donor-form-2,
-.continue-donor-form-3,
-.continue-donor-form-4 {
-  border-radius: 0; /* No rounding for middle items */
-  margin-top: -1px; /* Overlap slightly to remove gap */
-}
+/* THEME CHANGE: Blue Highlights */
+.highlight-blue { color: #4AA8D0; }
+.highlight-green { color: #529e57; font-weight: 700; }
 
-.continue-donor-form-5 {
-  border-radius: 0 0 15px 15px; /* Bottom rounded */
-  margin-top: -1px; /* Overlap slightly */
-}
+.sub-text { font-size: 20px; margin: 5px 0; color: #444; }
+.donor-id { font-size: 18px; color: #666; margin-top: 0; margin-bottom: 20px; font-weight: 600; }
 
-@font-face {
-  font-family: 'Inter_24pt_SemiBold';
-  src: url('Inter/Inter_24pt-SemiBold.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-/* Hover effect */
-.continue-donor-form-1:hover,
-.continue-donor-form-2:hover,
-.continue-donor-form-3:hover,
-.continue-donor-form-4:hover,
-.continue-donor-form-5:hover {
-  color: white;
-  background-color: #4AA8D0;
-  transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(197, 63, 63, 0.3);
-  z-index: 1; /* Bring hovered item forward */
-}
-
-/* Alternative: If you want them completely connected */
-.connected-buttons {
-  border-radius: 15px;
-  overflow: hidden; /* Contain all buttons */
-}
-
-.connected-buttons .continue-donor-form-1,
-.connected-buttons .continue-donor-form-2,
-.connected-buttons .continue-donor-form-3,
-.connected-buttons .continue-donor-form-4,
-.connected-buttons .continue-donor-form-5 {
-  margin-bottom: 0;
-  border-radius: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Divider line */
-}
-
-.connected-buttons .continue-donor-form-5 {
-  border-bottom: none; /* Remove last divider */
-}
-
-.donor-status-container-your-impact-matching {
-  width: 568px;
-  height: 53px;
-  position: relative;
-  font-size: 45px;
-  line-height: 25px;
+.profile-pill-static {
   display: inline-block;
-  font-family: Inter_28pt_Bold;
-  text-align: left;
+  background-color: #4AA8D0; /* Recipient Blue */
   color: white;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
-  top: 50px; /* Changed from -700px to -680px (moves 20px downward) */
-  left: 15%;
-  transform: translateX(800px) translateY(20px); /* Combined both transforms */
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 20px;
 }
 
-@font-face {
-    font-family: 'Inter_28pt_Bold';
-    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-.profile-90-complete-container-your-impact {
-    width: 606px;
-    height: auto;
+.recipient-form-button-container {
     position: absolute;
-    font-size: 32px;
-    line-height: 40px;
+    top: 30px;
+    right: 30px;
+    z-index: 5;
+
+  /* LAYOUT FIX: Makes the link behave like a button box */
+  display: inline-flex;       
+  justify-content: center;    
+  align-items: center;       
+  text-decoration: none;      /* Removes blue underline */
+}
+
+.recipient-form-pill {
+    background-color: #4AA8D0; /* Blue Pill */
     color: white;
-    text-align: left;
-    font-family: 'Inter_28pt_Medium', sans-serif;
-    top: 530px;   /* adjust: -10px / -20px / -30px */
-    right: 25%;
-    transform: translateX(280px);
-    z-index: 10; /* Add this temporarily */
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 17px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 15;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.10),
+                inset 0 -2px 4px rgba(255,255,255,0.60);
+    transition: transform .15s ease, background .2s ease;
 }
 
-@font-face {
-    font-family: 'Inter_28pt_Bold';
-    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
+.recipient-form-button-container:hover .recipient-form-pill {
+    background-color: #388bb0; /* Darker Blue on Hover */
+    transform: translateY(-1px);
 }
 
-.impact-red {
-  width: 17%; /* Changed to 20% width */
-  position: absolute; /* Changed to absolute for positioning */
-  right: 0; /* Position to the right */
-  border-radius: 25px;
-  overflow: hidden;
-  max-height: 100%;
-  object-fit: cover;
-  top: 435px; /* Move down to bottom area */
-  left: 1480px;
-  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25) inset);
-  z-index: 10;
-  animation: fadeIn 1.5s ease-out forwards;
+.recipient-form-button-container:active .recipient-form-pill {
+    transform: translateY(0px) scale(0.98);
 }
 
-.rectangle-div-sixth {
-  width: 40%;
-  height: 100px;
-  position: absolute; /* Changed from 'flex' to 'absolute' */
-  border-radius: 20px;
-  background-color:#4AA8D0;
-  left: 1050px;
-  top: 770px; /* Negative value moves it upward */
-}
-
-.rectangle-div-sixth:hover {
-  background-color: rgb(202, 199, 199);
-  transform: translateY(-3px);
-} 
-
-.quick-actions-profile-checklist {
-  width: 331px;
-  height: 37px;
-  position: absolute; /* Changed from relative to absolute */
-  font-size: 32px;
-  line-height: 35px;
-  display: inline-block;
-  font-family: Inter_28pt_Bold;
-  color: white;
-  left: 1320px; /* Distance from left */
-  top: 86%; /* Position at vertical middle */
-  transform: translateY(-50%); /* Adjust to truly center vertically */
-  z-index: 20;
-}
-
-.rectangle-div-seventh {
-  width: 35%;
-  height: 350px;
-  position: absolute; /* Changed from 'flex' to 'absolute' */
-  border-radius: 20px;
-  background-color: #f3f1ef;
-  left: 1050px;
-  top: 880px; /* Negative value moves it upward */
-  z-index: 100;
-}
-
-.rectangle-div-eighth {
-  width: 100%;
-  height:100px;
-  position: absolute; /* Changed from 'flex' to 'absolute' */
-  background-color:  #4AA8D0;
-  left: 0px;
-  top: 1280px; /* Negative value moves it upward */
-  z-index: 100;
-  min-height: 100px;
-}
-.personal-info-contact {
-  width: 448px;
-  height: 60px;
-  position: absolute; /* Should be absolute for left/top positioning */
-  font-size: 35px;
-  line-height: 55px; /* Changed to match height for centering */
-  display: block;
-  font-family: 'Inter_24pt_SemiBold', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
-  text-align: left;
-  animation: fadeIn 1.5s ease-out forwards;
-  z-index: 100;
-  left: 1250px;
-  transform: translateY(-500%); 
-  top: 1200px;/* Changed from 10px to -30px (moves upward) */
-  
-  /* Remove margin-bottom since we're using absolute positioning */
-  /* margin-bottom: 5px; */
-}
-
-.checkboxes-container {
+.banner-illustration {
   position: absolute;
-  right: 130px;
-  top: 100%;
-  transform: translateY(-10%);
+  right: -50px;
+  bottom: -250px;
+  height: 270px;
   width: auto;
+  object-fit: contain;
+  z-index: 0;
 }
 
-.checkboxes-container div {
-  margin-bottom: 20px;
+/* === STATS GRID === */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
-.checkboxes-container input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  transform: scale(2.0);
-  accent-color:green;
+.card {
+  border-radius: 20px;
+  padding: 25px;
+  height: 190px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
-.need-help {
-  width: 213px;
-  height: 37px;
-  position: absolute; /* Changed from relative to absolute */
-  font-size: 25px;
-  line-height: 35px;
-  display: inline-block;
-  font-family: Inter_28pt_SemiBold;
+.status-card { background-color: #f3f1ef; }
+/* THEME CHANGE: Blue Matching Card */
+.matching-card { background-color: #4AA8D0; }
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.text-blue { color: #4AA8D0; }
+.white-text { color: white; }
+
+.card-content h2 { 
+  font-size: 40px; 
+  font-weight: 900; 
+  margin: 0 0 8px 0; 
+}
+
+.card p { 
+  font-size: 16px; 
+  margin: 2px 0; 
+  font-weight: 600; 
+  line-height: 1.3; 
+}
+
+.card-img { 
+  height: 250px; 
+  width: auto; 
+  object-fit: contain; 
+}
+
+/* Blue Badge */
+.blue-badge {
+  background-color: #4AA8D0;
   color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 15px;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* === BOTTOM GRID === */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.column-header {
+  font-size: 22px;
+  font-weight: 800;
+  padding: 15px;
   text-align: center;
-  animation: fadeIn 1.5s ease-out forwards;
-  z-index: 100;
-  left: 50px; /* Distance from left */
-  bottom: 10px; /* Distance from bottom */
-  top: 1310px;
- 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.gray-header { background-color: #f3f1ef; color: #333; }
+.blue-header { background-color: #4AA8D0; color: white; }
+
+.action-list {
+  background-color: #f3f1ef;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 0 20px 20px 20px;
+}
+.action-item {
+  display: block;
+  background-color: white;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  transition: all 0.2s;
+}
+.action-item:hover { background-color: #4AA8D0; color: white; padding-left: 25px; }
+
+/* === CHECKLIST COLUMN === */
+.checklist-column { 
+  background-color: #f3f1ef; 
+  border-radius: 15px; 
+  display: flex;
+  flex-direction: column;
 }
 
-@font-face {
-  font-family: 'Inter_28pt_SemiBold';
-  src: url('Inter/Inter_28pt-SemiBold.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
+.checklist-wrapper { padding: 10px 0; flex-grow: 1; }
+.checklist-list { list-style: none; padding: 0; margin: 0; }
+
+.checklist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+.checklist-item:hover { background-color: rgba(0,0,0,0.03); }
+
+.item-text { font-size: 18px; font-weight: 600; color: #333; }
+
+.checklist-item input[type="checkbox"] { 
+  width: 24px; height: 24px; 
+  accent-color: #999; 
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.checklist-item input[type="checkbox"]:checked {
+    accent-color: #4AA8D0; /* Checked items are blue */
 }
 
-.need-help-helplifelink {
-  width: 213px;
-  height: 37px;
-  position: absolute; /* Changed from relative to absolute */
-  font-size: 25px;
-  line-height: 35px;
-  display: inline-block;
-  font-family: Inter_28pt_Regular;
-  color: white;
-  text-align: center;
-  animation: fadeIn 1.5s ease-out forwards;
-  z-index: 100;
-  right: 50px; /* Distance from left */
-  bottom: 10px; /* Distance from bottom */
-  top: 1310px;
- 
-}
+.dashboard-footer { background-color: #4AA8D0; color: white; padding: 20px 0; margin-top: 50px; }
 
-@font-face {
-  font-family: 'Inter_28pt_Regular';
-  src: url('Inter/Inter_28pt-Regular.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
+@media (max-width: 900px) {
+  .gray-banner { flex-direction: column; height: auto; text-align: center; }
+  .banner-text-content { max-width: 100%; }
+  .banner-illustration { position: relative; right: auto; bottom: auto; height: 180px; margin-top: 20px; }
+  .stats-grid, .bottom-grid { grid-template-columns: 1fr; }
+  .recipient-form-button-container { position: relative; top: auto; right: auto; margin-top: 10px; margin-bottom: 20px; }
 }
-
-.donor-status-container-matching-status {
-  width: 568px;
-  height: 53px;
-  position: absolute; /* Changed from relative to absolute */
-  font-size: 45px;
-  line-height: 25px;
-  display: inline-block;
-  font-family: 'Inter_28pt_Bold', sans-serif;
-  text-align: left;
-  color: white;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
-  top: 55%; /* Changed from 100% to 50% for vertical middle */
-  left:1090px; /* Distance from left for middle left */
-  transform: translateY(-50%); /* Adjust for true vertical centering */
-  animation: fadeIn 1.5s ease-out forwards;
-}
-
-@font-face {
-    font-family: 'Inter_28pt_Bold';
-    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-

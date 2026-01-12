@@ -73,20 +73,48 @@ Route::get('/donor/dashboard', function () {
     return view('dashboard.donor');
 })->name('donor.dashboard');
 
+Route::get('/donor/form', function () {
+    return view('dashboard.donor-form');
+})->name('donor.form');
+
+Route::get('/donor/submitted', function () {
+    return view('dashboard.d-after-submitting');
+})->name('donor.submitted');
+
 Route::get('/recipient/dashboard', function () {
-    return "<h1>Welcome to the Recipient Dashboard</h1><p>Match status and alerts will go here.</p>";
+    return view('dashboard.recipient'); 
 })->name('recipient.dashboard');
+
+Route::get('/recipient/form', function () {
+    return view('dashboard.recipient-form');
+})->name('recipient.form');
+
+// 3. Recipient Submitted (Success Page)
+Route::get('/recipient/submitted', function () {
+    return view('dashboard.r-after-submitting'); // Or create 'r-after-submitting' if content differs
+})->name('recipient.submitted');
 
 
 // ==========================================
 // 4. ADMIN ROUTES
 // ==========================================
 
+// 1. Admin Login Page
 Route::get('/admin/login', function () {
     return view('auth.admin-login');
 })->name('admin.login');
 
+// 2. Admin Dashboard Route
+Route::get('/admin/dashboard', function () {
+    return view('dashboard.admin');
+})->name('admin.dashboard');
+
+// 3. Login POST Logic
 Route::post('/admin/login', function (Request $request) {
-    // Admin auth logic
-    return "Admin Login Successful";
+    return redirect()->route('admin.dashboard');
 })->name('admin.login.post');
+
+// 4. View Details Redirect Route
+Route::get('/admin/view', function () {
+    return view('dashboard.view'); // Loads view.blade.php
+})->name('admin.view');
