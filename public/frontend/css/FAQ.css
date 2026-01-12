@@ -1,0 +1,146 @@
+/* ===============================
+   LifeLink FAQ Page (No Scrollbar)
+================================= */
+
+* { box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Container */
+.page-container {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  padding: 40px;
+  
+  /* Fade In Animation */
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* --- LEFT SIDE (Logo) --- */
+.left-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* --- RIGHT SIDE (Text) --- */
+.right-section {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Title Styling */
+.title {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #c53f3f;
+  margin: 0 0 30px 0;
+  
+  text-shadow: 
+    inset 1px 1px 2px rgba(0, 0, 0, 0.3),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* --- FAQ Specific Styling --- */
+.text-content {
+  max-width: 800px;
+  margin-bottom: 30px;
+  
+  /* REMOVED: max-height and overflow properties to disable scrolling */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adds space between questions */
+}
+
+.faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.question {
+  font-size: 18px;
+  font-weight: 700;
+  color: #c53f3f; 
+  margin: 0 0 5px 0;
+}
+
+.answer {
+  font-size: 16px;
+  line-height: 1.5; /* Slightly tighter line height to save space */
+  color: #111;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Button Styling */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  background-color: #940404;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(148, 4, 4, 0.2);
+}
+
+.btn-back:hover {
+  background-color: gray;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 900px) {
+  .page-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .right-section { align-items: center; }
+  .logo { max-width: 250px; margin-bottom: 30px; }
+  .title { font-size: 32px; text-align: center; }
+  .text-content { text-align: left; }
+}

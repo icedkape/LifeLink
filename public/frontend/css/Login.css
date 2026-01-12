@@ -1,0 +1,291 @@
+/* ===============================
+   LifeLink Login System CSS
+   (Covers Selection, Donor, and Recipient Pages)
+================================= */
+
+* { box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+}
+
+/* --- Background Image --- */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 101%;
+  height: 101%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* --- The Card Container --- */
+.register-card {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  
+  width: 100%;
+  max-width: 550px;
+  
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  
+  padding: 40px 50px;
+  
+  /* Flexbox for vertical layout */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Controls space between Logo, Header, and Form */
+  
+  /* Entrance Animation */
+  opacity: 0;
+  animation: cardEntrance 0.8s ease-out forwards;
+}
+
+/* Special class for the Selection Page (Optional: centers content vertically) */
+.selection-card {
+  justify-content: center;
+  min-height: 50vh;
+}
+
+/* --- FORM LAYOUT --- */
+/* Forces even spacing inside the form tags */
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* --- Header & Logo --- */
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+.box-logo { width: 120px; height: auto; }
+
+.header-text { text-align: center; }
+.header-text h1 {
+  font-size: 32px;
+  color: #0a1b39;
+  margin: 0 0 8px 0;
+  font-weight: 800;
+}
+.header-text p {
+  font-size: 16px;
+  color: #6c7688;
+  margin: 0;
+}
+
+/* --- Form Inputs --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 16px;
+  color: #0a1b39;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: #940404;
+  box-shadow: 0 0 0 3px rgba(148, 4, 4, 0.1);
+}
+
+/* --- Password Eye --- */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+/* --- Forgot Password Link --- */
+.forgot-password-link {
+  text-align: right;
+  margin: 0;
+}
+.forgot-password-link a {
+  color: #6c7688;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* --- BUTTON STYLES (FIXED) --- */
+
+.btn-row {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* 1. Base Button Style (Default: Full Width, Fixed Height) */
+.btn-submit {
+  width: 100%;        /* Takes full width on Donor/Recipient pages */
+  height: 50px;       /* Enforces the correct height */
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  color: white;
+  
+  /* Center text correctly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+  
+  /* Important: Remove 'flex: 1' from here so it doesn't squash vertically */
+}
+
+/* 2. Special Rule: Only share width when inside the selection row */
+.btn-row .btn-submit {
+  width: auto;
+  flex: 1;           /* Share width equally only here */
+}
+
+/* Donor Button (Red) */
+.btn-donor {
+  background-color: #940404;
+}
+.btn-donor:hover {
+  background-color: #7a0303;
+  transform: translateY(-2px);
+}
+
+/* Recipient Button (Dark Blue) */
+.btn-recipient {
+  background-color: #0a1b39;
+}
+.btn-recipient:hover {
+  background-color: #050e1f;
+  transform: translateY(-2px);
+}
+
+/* --- Bottom Links --- */
+.login-link {
+  text-align: center;
+}
+.login-link a {
+  color: #940404;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+.login-link a:hover { text-decoration: underline; }
+
+/* Admin Link Override */
+.admin-link-text {
+  color: #529E57 !important;
+}
+
+/* ===============================
+   NAVBAR (Standard)
+================================= */
+.topbar {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.topbar__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  background: #f3f1ef;
+  border-radius: 20px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.brand__logo { width: 140px; height: auto; display: block; }
+.nav { display: flex; gap: 20px; align-items: center; }
+.nav__link {
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+.nav__link:hover { color: #c53f3f; }
+
+/* Responsive Mobile */
+@media (max-width: 900px) {
+  .topbar { left: 50%; transform: translateX(-50%); width: 90%; }
+  .topbar__inner { width: 100%; justify-content: center; }
+  .nav { display: none; }
+}
+
+@media (max-width: 768px) {
+  .register-card {
+    right: 0; left: 0; margin: 0 auto;
+    width: 90%;
+    transform: translateY(-45%);
+    padding: 30px;
+  }
+  
+  /* Stack buttons on mobile */
+  .btn-row {
+    flex-direction: column;
+  }
+}
+
+/* Animation */
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(-40%); }
+  to { opacity: 1; transform: translateY(-50%); }
+}
+
+/* --- NEW: Blue Link Style for Recipient Page --- */
+.link-blue a {
+  color: #0a1b39 !important; /* Forces Dark Blue */
+}
+
+.link-blue a:hover {
+  color: #050e1f !important; /* Slightly darker on hover */
+  text-decoration: underline;
+}

@@ -1,0 +1,275 @@
+/* =========================================
+   Donor Dashboard - Compact & Fixed Layout
+   ========================================= */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* --- Header --- */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.header-left { display: flex; align-items: center; gap: 15px; }
+.logo { width: 60px; height: auto; }
+.header-title { display: flex; flex-direction: column; line-height: 1.1; }
+.title-top { font-size: 24px; font-weight: 800; color: #c53f3f; }
+.title-bottom { font-size: 20px; font-weight: 600; color: #333; }
+.btn-logout { background-color: #940404; color: white; border: none; padding: 10px 30px; border-radius: 25px; font-weight: 700; font-size: 20px; cursor: pointer; transition: background 0.2s; }
+.btn-logout:hover { background-color: #7a0303; }
+
+/* --- Main Layout --- */
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 40px 60px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === BANNER SECTION === */
+.welcome-banner-wrapper {
+  position: relative;
+}
+
+.gray-banner {
+  background-color: #f3f1ef;
+  border-radius: 20px;
+  padding: 30px 50px; /* Reduced padding */
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.banner-text-content {
+  max-width: 60%;
+  z-index: 2;
+}
+
+.banner-text-content h1 {
+  font-size: 42px;
+  margin: 0 0 5px 0;
+  font-weight: 900;
+  color: #333;
+}
+
+.highlight-red { color: #c53f3f; }
+.highlight-green { color: #529e57; font-weight: 700; }
+
+.sub-text { font-size: 20px; margin: 5px 0; color: #444; }
+.donor-id { font-size: 18px; color: #666; margin-top: 0; margin-bottom: 20px; font-weight: 600; }
+
+.profile-pill-static {
+  display: inline-block;
+  background-color: #008000;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.top-right-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: #008000;
+  color: white;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-weight: 800;
+  font-size: 17px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.banner-illustration {
+  position: absolute;
+  right: 1px;
+  bottom: 0;
+  height: 270px;
+  width: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* === STATS GRID (COMPACT UPDATES) === */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 25px; /* Reduced from 50px */
+  margin-bottom: 25px;
+}
+
+.card {
+  border-radius: 20px;
+  padding: 25px; /* Reduced from 30px */
+  height: 190px; /* Reduced from 220px for compactness */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.status-card { background-color: #f3f1ef; }
+.impact-card { background-color: #c53f3f; }
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.card-content h2 { 
+  font-size: 40px; 
+  font-weight: 900; 
+  margin: 0 0 8px 0; 
+  color: #c53f3f; 
+}
+.impact-card .card-content h2 { color: white; }
+.white-text { color: white; }
+
+.card p { 
+  font-size: 16px; 
+  margin: 2px 0; 
+  font-weight: 600; 
+  line-height: 1.3; 
+}
+
+.card-img { 
+  height: 250px; /* Reduced image size */
+  width: auto; 
+  object-fit: contain; 
+}
+
+/* New Inner Badge for "Next Review" */
+.inner-review-badge {
+  background-color: #c53f3f;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 15px; /* Space from text */
+  display: inline-block;
+  width: fit-content;
+}
+
+/* === BOTTOM GRID === */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+}
+
+.column-header {
+  font-size: 22px;
+  font-weight: 800;
+  padding: 15px;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.gray-header { background-color: #f3f1ef; color: #333; }
+.red-header { background-color: #c53f3f; color: white; }
+
+.action-list {
+  background-color: #f3f1ef;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 0 20px 20px 20px;
+}
+.action-item {
+  display: block;
+  background-color: white;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  transition: all 0.2s;
+}
+.action-item:hover { background-color: #c53f3f; color: white; padding-left: 25px; }
+
+
+/* === CHECKLIST COLUMN STYLES === */
+.checklist-column { 
+  background-color: #f3f1ef; 
+  border-radius: 15px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.checklist-wrapper { 
+  padding: 10px 0; 
+  flex-grow: 1;
+}
+
+/* Remove default list styling */
+.checklist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual Row Styling */
+.checklist-item {
+  display: flex;
+  justify-content: space-between; /* Pushes text left, box right */
+  align-items: center; /* Vertically centers them */
+  padding: 15px 30px; /* Space inside the row */
+  transition: background-color 0.2s;
+  cursor: pointer; /* Indicates interactivity */
+}
+
+/* Hover effect for rows */
+.checklist-item:hover {
+  background-color: rgba(0,0,0,0.03);
+}
+
+/* Text Styling */
+.item-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Checkbox Styling */
+.checklist-item input[type="checkbox"] { 
+  width: 24px; 
+  height: 24px; 
+  accent-color: #999; /* Grey color when checked, similar to image */
+  cursor: pointer;
+  transform: scale(1.2); /* Make it slightly bigger */
+}
+
+/* If you prefer the green checkmark from previous designs, change #999 to green */
+.checklist-item input[type="checkbox"]:checked {
+    accent-color: #28a745; /* Optional: Makes checked items green */
+}
+
+.dashboard-footer { background-color: #940404; color: white; padding: 20px 0; margin-top: 50px; }
+.footer-content { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; font-weight: 700; font-size: 18px; }
+
+@media (max-width: 900px) {
+  .gray-banner { flex-direction: column; height: auto; text-align: center; }
+  .banner-text-content { max-width: 100%; }
+  .banner-illustration { position: relative; right: auto; bottom: auto; height: 180px; margin-top: 20px; }
+  .stats-grid, .bottom-grid { grid-template-columns: 1fr; }
+  .top-right-btn { position: relative; top: auto; right: auto; margin-top: 10px; margin-bottom: 20px; }
+}

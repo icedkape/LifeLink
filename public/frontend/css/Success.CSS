@@ -1,0 +1,183 @@
+/* ===============================
+   LifeLink Success Page
+================================= */
+
+* { box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  background: #f4f4f4; /* Fallback color */
+}
+
+/* --- Background Image --- */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 101%;
+    z-index: 0; /* CHANGED from -1 to 0 */
+    object-fit: cover;
+}
+
+/* ===============================
+   NAVBAR (Same as Register)
+================================= */
+.topbar {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.topbar__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  background: #f3f1ef;
+  border-radius: 20px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.brand__logo { width: 140px; height: auto; display: block; }
+
+.nav { display: flex; gap: 20px; align-items: center; }
+.nav__link {
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.2s ease;
+}
+.nav__link:hover { color: #c53f3f; }
+
+@media (max-width: 900px) {
+  .topbar { left: 50%; transform: translateX(-50%); width: 90%; }
+  .topbar__inner { justify-content: center; width: 100%; }
+  .nav { display: none; }
+}
+
+/* ===============================
+   SUCCESS CARD
+================================= */
+.success-card {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  
+  width: 100%;
+  max-width: 550px; /* Narrower than Register for a cleaner look */
+  height: 90vh;
+  
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items horizontally */
+  text-align: center;
+  gap: 20px;
+  
+  /* Entrance Animation */
+  opacity: 0; 
+  animation: cardEntrance 0.8s ease-out forwards;
+}
+
+/* Logo */
+.box-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Checkmark Icon */
+.icon-check {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  /* Add a subtle bounce animation */
+  animation: bounceIn 0.8s 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* Text */
+.success-title {
+  font-size: 32px;
+  color: #0a1b39;
+  font-weight: 800;
+  margin: 0;
+}
+
+.success-desc {
+  font-size: 16px;
+  color: #6c7688;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 80%;
+}
+
+/* Button */
+.btn-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 45px;
+  background-color: #940404;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-login:hover {
+  background-color: #7a0303;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   ANIMATIONS
+================================= */
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(-40%); }
+  to { opacity: 1; transform: translateY(-50%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Page Exit Fade */
+.page-transition-exit { opacity: 0; transition: opacity 0.4s ease-in-out; }
+
+/* Start the body invisible, then fade in */
+.page-transition-enter {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Ensure the body starts at opacity 0 for the animation to work */
+body {
+    opacity: 0; 
+    /* The JS adds 'page-transition-enter' instantly to fade it to 1 */
+}

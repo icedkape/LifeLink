@@ -1,0 +1,706 @@
+/* Add only the requested styles */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: HIDDEN; /* Hide horizontal */
+  overflow-y: scroll; /* Force vertical scrollbar */
+}
+
+.logo {
+  width: 100px;
+  opacity: 0; /* Start invisible for fade-in */
+  animation: fadeIn 1.5s ease-out forwards; /* Fade-in animation */
+  position: absolute; /* Required for top/left positioning */
+  left: 50px;
+  top: 30px;
+}
+
+/* Fade-in animation definition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Donor.css */
+
+ .donor-dashboard {
+  width: 284px;
+  height: 61px;
+  position: absolute;
+  font-size: 40px;
+  line-height: 35px;
+  display: inline-block;
+  font-family: 'Inter_28pt_Bold', sans-serif; /* ✅ FIXED */
+  text-align: left;
+  color: #529E57;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+  top: 50px;
+  left: 150px;
+  animation: fadeIn 1.5s ease-out forwards; 
+}
+
+
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.dashboard {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.submit-button {
+  width: 8%; /* Changed from 100% to match other elements */
+  height: 45px;
+  background-color: #529E57;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  position: absolute;
+  top: 70px; /* Move down to bottom area */
+  left: 1700px; /* Fixed: Added "px" unit */
+  z-index: 5;
+}
+
+.submit-button:hover {
+  background-color: gray;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.rectangle-div {
+  	width: 90%;
+  	height: 270px;
+  	position: absolute;
+  	border-radius: 20px;
+  	background-color: #f3f1ef;
+    left: 80px;
+    top: 150px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+      box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/*.rectangle-div:hover {
+  background-color: rgb(228, 224, 224); /* Change to darkgray on hover 
+} */
+
+.hi-maria-santos-container {
+  	width: 568px;
+  	height: 53px;
+  	position: absolute;
+  	font-size: 55px;
+  	line-height: 25px;
+  	display: inline-block;
+  	font-family: Inter_28pt_Bold;
+  	text-align: left;
+  	color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+    top: 200px;   /* adjust: -10px / -20px / -30px */
+    left: 120px;
+    animation: fadeIn 1.5s ease-out forwards; 
+}
+
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+.maria-santos {
+  	color: #529E57;
+}
+
+.registered-donor-container {
+  	width: 606px;
+  	height: 77px;
+  	position: absolute;
+  	font-size: 32px;
+  	line-height: 40px;
+  	text-align: left;
+  	display: inline-block;
+  	color: rgba(0, 0, 0, 0.8);
+  	font-family: Inter_28pt_Bold;
+    top: 250px;   /* adjust: -10px / -20px / -30px */
+    right: 1180px;
+    animation: fadeIn 1.5s ease-out forwards; 
+}
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.active {
+    color: #529E57;
+}
+
+.totals {
+  	width: 40%;
+  	height:250px;
+  	position: relative;
+  	border-radius: 20px;
+    left: 1000px;
+    top:160px;
+}
+
+
+.totals-container {
+  	width: 568px;
+  	height: 53px;
+  	position: absolute;
+  	font-size: 80px;
+  	line-height: 25px;
+  	display: inline-block;
+  	font-family: Inter_28pt_Bold;
+  	text-align: left;
+  	color: white;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+    top: 300px;   /* adjust: -10px / -20px / -30px */
+    left: 1105px;
+    animation: fadeIn 1.5s ease-out forwards; 
+}
+
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.available-container {
+  	width: 568px;
+  	height: 53px;
+  	position: absolute;
+  	font-size: 80px;
+  	line-height: 25px;
+  	display: inline-block;
+  	font-family: Inter_28pt_Bold;
+  	text-align: left;
+  	color: white;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+    top: 300px;   /* adjust: -10px / -20px / -30px */
+    right: -180px;
+    animation: fadeIn 1.5s ease-out forwards; 
+}
+
+.rectangle-div-02 {
+  	width: 45%;
+  	height: 150px;
+  	position: absolute;
+  	border-radius: 20px;
+  	background-color: #f3f1ef;
+    left: 80px;
+    top: 430px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+
+}
+
+.rectangle-div-03 {
+  	width: 45%;
+  	height: 150px;
+  	position: absolute;
+  	border-radius: 20px;
+  	background-color: #f3f1ef;
+    left: 940px;
+    top: 430px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+
+}
+
+.available-organs {
+  	width: 30%;
+  	height:80px;
+  	position: absolute;
+  	border-radius: 20px;
+    right: 1220px;
+    top:470px;
+}
+
+.manage-donors {
+  	width: 30%;
+  	height:80px;
+  	position: relative;
+  	border-radius: 10px;
+    left:240px;
+    top:300px;
+}
+
+.organ-type {
+  	width: 134px;
+  	height: 41px;
+  	position: relative;
+  	font-size: 25px;
+  	line-height: 40px;
+  	font-weight: 10;
+  	font-family: Inter_24pt_Medium;
+  	color: rgba(0, 0, 0, 0.8);
+  	text-align: left;
+  	display: inline-block;
+
+    right: 1210px;
+    top:370px;
+}
+
+@font-face {
+    font-family: 'Inter_24pt_Medium';
+    src: url('Inter/Inter_24pt-Medium.ttf') format('truetype');
+    font-weight: 900;
+    font-style: 150;
+}
+
+.blood-type {
+  	width: 134px;
+  	height: 41px;
+  	position: relative;
+  	font-size: 25px;
+  	line-height: 40px;
+  	font-weight: 10;
+  	font-family: Inter_24pt_Medium;
+  	color: rgba(0, 0, 0, 0.8);
+  	text-align: left;
+  	display: inline-block;
+
+    right: 1190px;
+    top:370px;
+}
+
+.hospital-type-01 {
+  	width: 134px;
+  	height: 41px;
+  	position: relative;
+  	font-size: 25px;
+  	line-height: 40px;
+  	font-weight: 10;
+  	font-family: Inter_24pt_Medium;
+  	color: rgba(0, 0, 0, 0.8);
+  	text-align: left;
+  	display: inline-block;
+ right: 1250px;
+    top:370px;
+}
+
+/* AVAILABILITY BUTTON SECTION */ 
+/* Dropdown Container */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 30px;
+  right: 1260px;
+  top:375px;
+}
+
+/* Rectangle Button */
+.rectangle-dropdown-btn {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rectangle-dropdown-btn:hover {
+  border-color: #940404;
+  box-shadow: 0 4px 12px rgba(148, 4, 4, 0.1);
+}
+
+.btn-text {
+  font-family: 'Inter_24pt_Medium', sans-serif;
+  font-size: 18px;
+  color: #333;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown Menu - HIDDEN BY DEFAULT */
+.dropdown-menu {
+  display: none; /* ← IMPORTANT: Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-top: 5px;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Show dropdown ONLY on hover */
+.dropdown-container:hover .dropdown-menu {
+  display: block; /* ← Show only when hovering container */
+}
+
+.dropdown-container:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 15px 20px;
+  font-family: 'Inter_24pt_Medium', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f8f8;
+}
+
+/* Color Coding */
+.dropdown-item.available {
+  color: #28a745; /* Green for Available */
+}
+
+.dropdown-item.not-available {
+  color: #dc3545; /* Red for Not Available */
+}
+
+.donor-ID {
+  	width: 134px;
+  	height: 41px;
+  	position: absolute;
+  	font-size: 25px;
+  	line-height: 40px;
+  	font-weight: 10;
+  	font-family: Inter_24pt_Medium;
+  	color: rgba(0, 0, 0, 0.8);
+  	text-align: left;
+  	display: inline-block;
+
+    left: 1000px;
+    top:590px;
+}
+
+.donor-Name {
+  	width: 134px;
+  	height: 41px;
+  	position: absolute;
+  	font-size: 19px;
+  	line-height: 40px;
+  	font-weight: 10;
+  	font-family: Inter_24pt_Medium;
+  	color: rgba(0, 0, 0, 0.8);
+  	text-align: left;
+  	display: inline-block;
+
+    left: 1150px;
+    top:590px;
+}
+
+.view-btn {
+  position: absolute;
+  left: 1320px;
+  top: 590px;
+  width: 120px;
+  height: 45px;
+  background-color: #4AA8D0;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Inter_24pt_Medium', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.view-btn:hover {
+  background-color: #3a88b0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 168, 208, 0.3);
+}
+
+.view-btn:active {
+  transform: translateY(0);
+  background-color: #2a78a0;
+}
+
+/* STATUS BUTTON | FOR DONOR */ 
+/* Renamed container */
+/* CONTAINER - holds both button and dropdown */
+.dropdown-container-02 {
+  position: absolute;
+  left: 1450px;  /* Or use right positioning */
+  top: 590px;
+  display: inline-block;
+  width: 120px;
+  height: 45px;  /* Should match button height when closed */
+  z-index: 90;
+}
+
+/* Rectangle Button */
+.rectangle-dropdown-btn {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rectangle-dropdown-btn:hover {
+  border-color: #940404;
+  box-shadow: 0 4px 12px rgba(148, 4, 4, 0.1);
+}
+
+.btn-text {
+  font-family: 'Inter_24pt_Medium', sans-serif;
+  font-size: 18px;
+  color: #333;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown Menu - HIDDEN BY DEFAULT */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-top: 5px;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Show dropdown ONLY on hover */
+.dropdown-container-02:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-container-02:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 15px 20px;
+  font-family: 'Inter_24pt_Medium', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f8f8;
+}
+
+/* Color Coding */
+.dropdown-item.available {
+  color: #28a745;
+}
+
+.dropdown-item.not-available {
+  color: #dc3545;
+}
+
+.rectangle-div-04 {
+    width: 710%; /* Smaller width */
+    height: 150px;
+    position: absolute;
+    border-radius: 20px;
+    background-color: #f3f1ef;
+   right: 640px; /* Moved to right side */ /* Add right margin */
+    top: 120px; /* Keep same top position */
+    transition: background-color 0.3s ease;
+}
+
+.rectangle-div-05 {
+    width: 710%; /* Smaller width */
+    height: 150px;
+    position: absolute;
+    border-radius: 20px;
+    background-color: #f3f1ef;
+    left: -510px; /* Moved to right side */ /* Add right margin */
+    top: 120px; /* Keep same top position */
+    transition: background-color 0.3s ease;
+}
+
+
+.manage-hospitals {
+  	width: 600px; /* Fixed pixel width */
+  	height: 85px;
+  	position: absolute;
+    right: 860px;
+    top: 160px;
+}
+
+.hospital-type-02 {
+  	width: 134px;
+  	height: 41px;
+  	position: relative;
+  	font-size: 25px;
+  	line-height: 40px;
+  	font-weight: 10;
+  	font-family: Inter_24pt_Medium;
+  	color: rgba(0, 0, 0, 0.8);
+  	text-align: left;
+  	display: inline-block;
+
+    right: 1325px;
+    top:220px;
+}
+
+.view-btn-02 {
+  position: absolute;
+    right: 1220px;
+    top:280px;
+  width: 120px;
+  height: 45px;
+  background-color: #4AA8D0;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Inter_24pt_Medium', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.view-btn-02:hover {
+  background-color: #3a88b0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 168, 208, 0.3);
+}
+
+.view-btn-02:active {
+  transform: translateY(0);
+  background-color: #2a78a0;
+}
+
+.manage-doctors {
+  	width: 600px; /* Fixed pixel width */
+  	height: 85px;
+  	position: absolute;
+    right: 10px;
+    top: 160px;
+}
+
+.doctors-name { 
+    width: 134px;
+     height: 41px; 
+     position: absolute; 
+     font-size: 22px; 
+     line-height: 40px; 
+     font-weight: 10; 
+     font-family: Inter_24pt_Medium; 
+     color: rgba(0, 0, 0, 0.8); 
+     text-align: left; 
+     display: inline-block; 
+     right: 460px; 
+     top: 280px;
+     }
+
+.view-btn-03 {
+  position: absolute;
+    right: 280px;
+    top:280px;
+  width: 120px;
+  height: 45px;
+  background-color: #4AA8D0;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Inter_24pt_Medium', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.view-btn-03:hover {
+  background-color: #3a88b0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 168, 208, 0.3);
+}
+
+.view-btn-03:active {
+  transform: translateY(0);
+  background-color: #2a78a0;
+}
+
+.rectangle-div-06 {
+    width: 3000%;
+    height: 150px;
+    position: absolute;
+    background-color: #225225;
+    RIGHT: -1000px; /* Moved to right side */ /* Add right margin */
+    top: 420px; /* Keep same top position */
+    transition: background-color 0.3s ease;
+        
+}

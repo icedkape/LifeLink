@@ -1,0 +1,711 @@
+/* Add only the requested styles */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-y: auto; /* Makes the page scrollable */
+}
+
+.logo {
+  width: 100px;
+  opacity: 0; /* Start invisible for fade-in */
+  animation: fadeIn 1.5s ease-out forwards; /* Fade-in animation */
+  position: relative; /* Required for top/left positioning */
+  left: 50px;
+  top: 30px;
+}
+
+/* Fade-in animation definition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Donor.css */
+
+ .donor-dashboard {
+  width: 284px;
+  height: 61px;
+  position: relative;
+  font-size: 40px;
+  line-height: 35px;
+  display: inline-block;
+  font-family: 'Inter_28pt_Bold', sans-serif; /* ✅ FIXED */
+  text-align: left;
+  color: #4AA8D0;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+  top: 10px;
+  left: 40px;
+  animation: fadeIn 1.5s ease-out forwards; 
+}
+
+
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.dashboard {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.submit-button {
+  width: 8%; /* Changed from 100% to match other elements */
+  height: 45px;
+  background-color: #4AA8D0;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  position: absolute;
+  top: 70px; /* Move down to bottom area */
+  left: 1700px; /* Fixed: Added "px" unit */
+  z-index: 5;
+}
+
+.submit-button:hover {
+  background-color: gray;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.rectangle-div {
+  	width: 90%;
+  	height: 270px;
+  	position: relative;
+  	border-radius: 20px;
+  	background-color: #f3f1ef;
+    left: 80px;
+    top: 40px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+      box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/*.rectangle-div:hover {
+  background-color: rgb(228, 224, 224); /* Change to darkgray on hover 
+} */
+
+.hi-maria-santos-container {
+  	width: 568px;
+  	height: 53px;
+  	position: relative;
+  	font-size: 55px;
+  	line-height: 25px;
+  	display: inline-block;
+  	font-family: Inter_28pt_Bold;
+  	text-align: left;
+  	color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+    top: -180px;   /* adjust: -10px / -20px / -30px */
+    left: 120px;
+    animation: fadeIn 1.5s ease-out forwards; 
+}
+
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+.maria-santos {
+  	color:#4AA8D0;
+}
+
+.registered-donor-container {
+  	width: 606px;
+  	height: 77px;
+  	position: relative;
+  	font-size: 32px;
+  	line-height: 40px;
+  	text-align: left;
+  	display: inline-block;
+  	color: rgba(0, 0, 0, 0.8);
+  	font-family: Inter_28pt_Bold;
+    top: -130px;   /* adjust: -10px / -20px / -30px */
+    right: 450px;
+    animation: fadeIn 1.5s ease-out forwards; 
+}
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.status {
+  	font-family: Inter_28pt_Bold;
+    top: -185px;   /* adjust: -10px / -20px / -30px */
+    right: 450px;
+    animation: fadeIn 1.5s ease-out forwards; 
+    font-size: 32px;
+}
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+.active {
+  	color: #529e57;
+    font-size: 32px;
+    transform: translateY(-50px);
+}
+
+.submit-button-donorprof {
+  width: 25%; /* Changed from 100% to match other elements */
+  height: 60px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  position: absolute;
+  top: 300px; /* Move down to bottom area */
+  right: 1320px; /* Fixed: Added "px" unit */
+  z-index: 5;
+
+}
+
+.submit-button-continuedonorform {
+  width: 20%; /* Changed from 100% to match other elements */
+  height: 50px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  position: absolute;
+  top: 180px; /* Move down to bottom area */
+  left: 1380px; /* Fixed: Added "px" unit */
+  z-index: 5;
+}
+
+.submit-button-continuedonorform:hover {
+  background-color: gray;
+  transform: translateY(-2px);
+}
+
+.submit-button-continuedonorform:active {
+  transform: translateY(0);
+}
+
+.files-red {
+  width: 18%; /* Changed to 20% width */
+  position: absolute; /* Changed to absolute for positioning */
+  right: 0; /* Position to the right */
+  border-radius: 25px;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+  top: 170px; /* Move down to bottom area */
+  left: 1460px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+   animation: fadeIn 1.5s ease-out forwards;
+}
+
+.rectangle-div-second {
+  	width: 50%;
+  	height: 317px;
+  	position: relative;
+  	border-radius: 20px;
+  	background-color: #f3f1ef;
+    left: 80px;
+    top: -35px;
+}
+
+.rectangle-div-third {
+  	width: 40%;
+  	height: 317px;
+  	position: relative;
+  	border-radius: 20px;
+  	background-color: #4AA8D0;
+    left: 1050px;
+    top: -350px;
+}
+
+.donor-status-container {
+  width: 568px;
+  height: 53px;
+  position: absolute; /* Changed from relative to absolute */
+  font-size: 45px;
+  line-height: 25px;
+  display: inline-block;
+  font-family: 'Inter_28pt_Bold', sans-serif;
+  text-align: left;
+  color: #4AA8D0;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+  top: 55%; /* Changed from 100% to 50% for vertical middle */
+  left: 120px; /* Distance from left for middle left */
+  transform: translateY(-50%); /* Adjust for true vertical centering */
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.profile-90-complete-container {
+  width: 606px;
+  height: 77px;
+  position: absolute; /* Changed from relative to absolute */
+  font-size: 32px;
+  line-height: 40px;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+  display: inline-block;
+  font-family: 'Inter_28pt_Medium', sans-serif; /* Fixed font family */
+  top: 540px; /* Changed from -620px to positive value */
+  left: 120px; /* Changed from right: 450px to left: 50px */
+  z-index: 10; /* Ensure it's visible */
+}
+
+@font-face {
+  font-family: 'Inter_28pt_Medium';
+  src: url('Inter/Inter_28pt-Medium.ttf') format('truetype');
+  font-weight: 500; /* Changed from 900 to 500 for Medium */
+  font-style: normal;
+}
+
+.status-red {
+  width: 20%; /* Changed to 20% width */
+  position: absolute; /* Changed to absolute for positioning */
+  right: 0; /* Position to the right */
+  border-radius: 25px;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+  top: 390px; /* Move down to bottom area */
+  left: 650px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+  z-index: 10;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.submit-button-nextreview-due {
+  width: 30%; /* Changed from 100% to match other elements */
+  height: 80px;
+  background-color: #4AA8D0;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  position: absolute;
+  top: 630px; /* Move down to bottom area */
+  right: 1220px; /* Fixed: Added "px" unit */
+  z-index: 20;
+}
+
+/*.submit-button-nextreview-due:hover {
+  background-color: gray;
+  transform: translateY(-2px);
+} 
+
+.submit-button-nextreview-due:active {
+  transform: translateY(0);
+} */
+
+.rectangle-div-fourth {
+  width: 50%;
+  height: 100px;
+  position: absolute; /* Changed from 'flex' to 'absolute' */
+  border-radius: 20px;
+  background-color: #f3f1ef;
+  left: 80px;
+  top: 770px; /* Negative value moves it upward */
+}
+
+.rectangle-div-fourth:hover {
+  background-color: rgb(202, 199, 199);
+  transform: translateY(-3px);
+} 
+
+.quick-actions {
+  width: 331px;
+  height: 37px;
+  position: absolute; /* Changed from relative to absolute */
+  font-size: 32px;
+  line-height: 35px;
+  display: inline-block;
+  font-family: Inter_28pt_Bold;
+  color: rgba(0, 0, 0, 0.8);
+  left: 420px; /* Distance from left */
+  top: 87%; /* Position at vertical middle */
+  transform: translateY(-50%); /* Adjust to truly center vertically */
+  z-index: 20;
+}
+
+@font-face {
+  font-family: 'Inter_28pt_Bold';
+  src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.rectangle-div-fifth {
+  width: 50%;
+  height: 350px;
+  position: absolute; /* Changed from 'flex' to 'absolute' */
+  border-radius: 20px;
+  background-color: #f3f1ef;
+  left: 80px;
+  top: 880px; /* Negative value moves it upward */
+  z-index: 20;
+}
+
+.donor-actions-container {
+  position: absolute;
+  left: 360px;
+  top: 915px;
+  z-index: 20;
+}
+
+/* Button styling with outline and alignment */
+.continue-donor-form-1,
+.continue-donor-form-2,
+.continue-donor-form-3,
+.continue-donor-form-4 {
+  width: 448px;
+  height: 60px; /* Fixed height for button look */
+  position: relative;
+  font-size: 35px;
+  line-height: 60px; /* Match height for vertical centering */
+  display: block; /* Each on new line */
+  font-family: 'Inter_24pt_SemiBold', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+  margin-bottom: 5px; /* Reduced space between buttons */
+  animation: fadeIn 1.5s ease-out forwards;
+  /* Button styling */
+  background-color: #f3f1ef;
+  border-radius: 15px;
+  padding-left: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  /* Ensure left alignment */
+  margin-left: 0;
+  padding-right: 20px;
+  box-sizing: border-box;
+  
+  /* Remove outline/border */
+  border: none;
+  outline: none;
+}
+
+/* Create the illusion of buttons being connected */
+.continue-donor-form-1 {
+  border-radius: 15px 15px 0 0; /* Top rounded */
+}
+
+.continue-donor-form-2,
+.continue-donor-form-3,
+.continue-donor-form-4 {
+  border-radius: 0; /* No rounding for middle items */
+  margin-top: -1px; /* Overlap slightly to remove gap */
+}
+
+.continue-donor-form-5 {
+  border-radius: 0 0 15px 15px; /* Bottom rounded */
+  margin-top: -1px; /* Overlap slightly */
+}
+
+@font-face {
+  font-family: 'Inter_24pt_SemiBold';
+  src: url('Inter/Inter_24pt-SemiBold.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Hover effect */
+.continue-donor-form-1:hover,
+.continue-donor-form-2:hover,
+.continue-donor-form-3:hover,
+.continue-donor-form-4:hover,
+.continue-donor-form-5:hover {
+  color: white;
+  background-color: #4AA8D0;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(197, 63, 63, 0.3);
+  z-index: 1; /* Bring hovered item forward */
+}
+
+/* Alternative: If you want them completely connected */
+.connected-buttons {
+  border-radius: 15px;
+  overflow: hidden; /* Contain all buttons */
+}
+
+.connected-buttons .continue-donor-form-1,
+.connected-buttons .continue-donor-form-2,
+.connected-buttons .continue-donor-form-3,
+.connected-buttons .continue-donor-form-4,
+.connected-buttons .continue-donor-form-5 {
+  margin-bottom: 0;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Divider line */
+}
+
+.connected-buttons .continue-donor-form-5 {
+  border-bottom: none; /* Remove last divider */
+}
+
+.donor-status-container-your-impact-matching {
+  width: 568px;
+  height: 53px;
+  position: relative;
+  font-size: 45px;
+  line-height: 25px;
+  display: inline-block;
+  font-family: Inter_28pt_Bold;
+  text-align: left;
+  color: white;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+  top: 50px; /* Changed from -700px to -680px (moves 20px downward) */
+  left: 15%;
+  transform: translateX(800px) translateY(20px); /* Combined both transforms */
+}
+
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.profile-90-complete-container-your-impact {
+    width: 606px;
+    height: auto;
+    position: absolute;
+    font-size: 32px;
+    line-height: 40px;
+    color: white;
+    text-align: left;
+    font-family: 'Inter_28pt_Medium', sans-serif;
+    top: 530px;   /* adjust: -10px / -20px / -30px */
+    right: 25%;
+    transform: translateX(280px);
+    z-index: 10; /* Add this temporarily */
+}
+
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.impact-red {
+  width: 17%; /* Changed to 20% width */
+  position: absolute; /* Changed to absolute for positioning */
+  right: 0; /* Position to the right */
+  border-radius: 25px;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+  top: 435px; /* Move down to bottom area */
+  left: 1480px;
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25) inset);
+  z-index: 10;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.rectangle-div-sixth {
+  width: 40%;
+  height: 100px;
+  position: absolute; /* Changed from 'flex' to 'absolute' */
+  border-radius: 20px;
+  background-color:#4AA8D0;
+  left: 1050px;
+  top: 770px; /* Negative value moves it upward */
+}
+
+.rectangle-div-sixth:hover {
+  background-color: rgb(202, 199, 199);
+  transform: translateY(-3px);
+} 
+
+.quick-actions-profile-checklist {
+  width: 331px;
+  height: 37px;
+  position: absolute; /* Changed from relative to absolute */
+  font-size: 32px;
+  line-height: 35px;
+  display: inline-block;
+  font-family: Inter_28pt_Bold;
+  color: white;
+  left: 1320px; /* Distance from left */
+  top: 86%; /* Position at vertical middle */
+  transform: translateY(-50%); /* Adjust to truly center vertically */
+  z-index: 20;
+}
+
+.rectangle-div-seventh {
+  width: 35%;
+  height: 350px;
+  position: absolute; /* Changed from 'flex' to 'absolute' */
+  border-radius: 20px;
+  background-color: #f3f1ef;
+  left: 1050px;
+  top: 880px; /* Negative value moves it upward */
+  z-index: 100;
+}
+
+.rectangle-div-eighth {
+  width: 100%;
+  height:100px;
+  position: absolute; /* Changed from 'flex' to 'absolute' */
+  background-color:  #4AA8D0;
+  left: 0px;
+  top: 1280px; /* Negative value moves it upward */
+  z-index: 100;
+  min-height: 100px;
+}
+.personal-info-contact {
+  width: 448px;
+  height: 60px;
+  position: absolute; /* Should be absolute for left/top positioning */
+  font-size: 35px;
+  line-height: 55px; /* Changed to match height for centering */
+  display: block;
+  font-family: 'Inter_24pt_SemiBold', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+  animation: fadeIn 1.5s ease-out forwards;
+  z-index: 100;
+  left: 1250px;
+  transform: translateY(-500%); 
+  top: 1200px;/* Changed from 10px to -30px (moves upward) */
+  
+  /* Remove margin-bottom since we're using absolute positioning */
+  /* margin-bottom: 5px; */
+}
+
+.checkboxes-container {
+  position: absolute;
+  right: 130px;
+  top: 100%;
+  transform: translateY(-10%);
+  width: auto;
+}
+
+.checkboxes-container div {
+  margin-bottom: 20px;
+}
+
+.checkboxes-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  transform: scale(2.0);
+  accent-color:green;
+}
+
+.need-help {
+  width: 213px;
+  height: 37px;
+  position: absolute; /* Changed from relative to absolute */
+  font-size: 25px;
+  line-height: 35px;
+  display: inline-block;
+  font-family: Inter_28pt_SemiBold;
+  color: white;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out forwards;
+  z-index: 100;
+  left: 50px; /* Distance from left */
+  bottom: 10px; /* Distance from bottom */
+  top: 1310px;
+ 
+}
+
+@font-face {
+  font-family: 'Inter_28pt_SemiBold';
+  src: url('Inter/Inter_28pt-SemiBold.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.need-help-helplifelink {
+  width: 213px;
+  height: 37px;
+  position: absolute; /* Changed from relative to absolute */
+  font-size: 25px;
+  line-height: 35px;
+  display: inline-block;
+  font-family: Inter_28pt_Regular;
+  color: white;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out forwards;
+  z-index: 100;
+  right: 50px; /* Distance from left */
+  bottom: 10px; /* Distance from bottom */
+  top: 1310px;
+ 
+}
+
+@font-face {
+  font-family: 'Inter_28pt_Regular';
+  src: url('Inter/Inter_28pt-Regular.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.donor-status-container-matching-status {
+  width: 568px;
+  height: 53px;
+  position: absolute; /* Changed from relative to absolute */
+  font-size: 45px;
+  line-height: 25px;
+  display: inline-block;
+  font-family: 'Inter_28pt_Bold', sans-serif;
+  text-align: left;
+  color: white;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25) inset);
+  top: 55%; /* Changed from 100% to 50% for vertical middle */
+  left:1090px; /* Distance from left for middle left */
+  transform: translateY(-50%); /* Adjust for true vertical centering */
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+@font-face {
+    font-family: 'Inter_28pt_Bold';
+    src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+

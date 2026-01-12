@@ -1,0 +1,148 @@
+.forward-icon {
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      top: 50px;
+      left: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 10px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .forward-icon:hover {
+      transform: translateX(5px) scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .forward-icon:active {
+      transform: translateX(5px) scale(1);
+    }
+
+    .forward-icon img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) invert(1); /* Makes image white */
+    }
+
+
+.logo {
+  width: 600px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+  position: absolute; /* or relative/fixed - required for left/top */
+  left: 150px; /* Changed from 100px to 150px (moves 50px right) */
+  top: 100px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Optional: slide in from top */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thank-you-for {
+  width: 796px;
+  height: 88px;
+  position: relative;
+  font-size: 48px;
+  line-height: 55px;
+  display: inline-block;
+  font-family: 'Inter_28pt_Bold', sans-serif; /* Added quotes */
+  color: #4AA8D0;
+  text-align: left;
+  left: 715px;
+  top: 280px;
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+  
+  /* Inner shadow */
+  text-shadow: 
+    inset 1px 1px 2px rgba(0, 0, 0, 0.3),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.5);
+  
+  /* Alternative: Using filter for inner shadow */
+  /* filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3) inset); */
+}
+
+/* Font-face for Inter_28pt_Bold */
+@font-face {
+  font-family: 'Inter_28pt_Bold';
+  src: url('Inter/Inter_28pt-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.together-we-are-container {
+  	width: 796px;
+  height: 88px;
+  position: relative;
+  font-size: 20px;
+  line-height: 25px;
+  display: inline-block;
+  font-family: 'Inter_24pt_Regular'; /* Added quotes */
+  color: black;
+  text-align: left;
+  right: 85px;
+  top: 330px;
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+  
+  /* Inner shadow */
+  text-shadow: 
+    inset 1px 1px 2px rgba(0, 0, 0, 0.3),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.5);
+  
+  /* Alternative: Using filter for inner shadow */
+  /* filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3) inset); */
+}
+
+/* Font-face for Inter_24pt_Regular */
+@font-face {
+  font-family: 'Inter_24pt_Regular';
+  src: url('Inter/Inter_24pt-Regular.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+.button {
+    width: 15%;
+    height: 45px;
+    position: relative;
+    border-radius: 25px;
+    background-color:#4AA8D0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    font-family: 'InterRegular', Helvetica, Arial, sans-serif; /* Changed font */
+    font-weight: normal; /* Changed from bold to normal */
+
+    margin-left: 710px; 
+    margin-right: 300px;
+    margin-top: 290px;
+
+    animation: slideIn 1s ease-out forwards, fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0; /* Start invisible for fadeIn */
+}
+
+
+.button:hover{
+    background-color: gray;
+    transform: translateY(-50%) scale(1.05);
+}

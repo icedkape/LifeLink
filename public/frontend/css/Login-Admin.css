@@ -1,0 +1,217 @@
+/* ===============================
+   LifeLink Admin Login Page
+   (Green Theme + Flexbox Layout)
+================================= */
+
+* { box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+}
+
+/* --- Background Image --- */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; 
+}
+
+/* --- The White Card --- */
+.register-card {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  
+  width: 100%;
+  max-width: 550px;
+  /* Height defaults to auto to fit content nicely */
+  
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* IMPORTANT: This creates space between Logo, Header, and Form */
+  
+  /* Entrance Animation */
+  opacity: 0;
+  animation: cardEntrance 0.8s ease-out forwards;
+}
+
+/* --- Header & Logo --- */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.box-logo { width: 120px; height: auto; }
+
+.header-text { text-align: center; margin-bottom: 10px; }
+.header-text h1 {
+  font-size: 32px;
+  color: #0a1b39;
+  margin: 0 0 8px 0;
+  font-weight: 800;
+}
+.header-text p {
+  font-size: 16px;
+  color: #6c7688;
+  margin: 0;
+}
+
+/* --- Form Layout (Fixes spacing issues) --- */
+.register-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds 20px space between Inputs and Buttons */
+}
+
+/* --- Form Inputs --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between Label and Input */
+  width: 100%;
+}
+
+.form-label {
+  font-size: 16px;
+  color: #0a1b39;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* GREEN FOCUS BORDER */
+.form-input:focus {
+  border-color: #529E57;
+  box-shadow: 0 0 0 3px rgba(82, 158, 87, 0.1);
+}
+
+/* --- Password Eye Icon --- */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+/* --- Buttons (GREEN THEME) --- */
+.btn-submit {
+  width: 100%;
+  height: 50px;
+  background-color: #529E57; /* Admin Green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 10px; /* Extra space above button */
+}
+
+.btn-submit:hover {
+  background-color: #3e7a41; /* Darker Green */
+  transform: translateY(-2px);
+}
+
+/* --- Links (GREEN THEME) --- */
+.login-link {
+  text-align: center;
+}
+.login-link a {
+  color: #529E57; /* Admin Green Text */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+.login-link a:hover { text-decoration: underline; }
+
+/* ===============================
+   NAVBAR (Standard)
+================================= */
+.topbar {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.topbar__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  background: #f3f1ef;
+  border-radius: 20px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.brand__logo { width: 140px; height: auto; display: block; }
+.nav { display: flex; gap: 20px; align-items: center; }
+.nav__link {
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+.nav__link:hover { color: #c53f3f; } 
+
+/* Responsive */
+@media (max-width: 900px) {
+  .topbar { left: 50%; transform: translateX(-50%); width: 90%; }
+  .topbar__inner { width: 100%; justify-content: center; }
+  .nav { display: none; }
+}
+
+@media (max-width: 768px) {
+  .register-card {
+    right: 0; left: 0; margin: 0 auto;
+    width: 90%;
+    transform: translateY(-40%);
+  }
+}
+
+/* Animations */
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(-40%); }
+  to { opacity: 1; transform: translateY(-50%); }
+}
