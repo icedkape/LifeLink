@@ -9,20 +9,6 @@
 
 <body>
 
-  <header class="topbar">
-    <div class="topbar__inner">
-      <a href="{{ url('/') }}">
-        <img class="brand__logo" src="{{ asset('frontend/images/LOGO.png') }}" alt="LifeLink">
-      </a>
-      <nav class="nav">
-        <a class="nav__link" href="{{ url('/') }}">Home</a>
-        <a class="nav__link" href="{{ url('/mission') }}">Mission</a>
-        <a class="nav__link" href="{{ url('/#lifelinkers') }}">About Us</a>
-        <a class="nav__link" href="{{ url('/login') }}">Login</a>
-      </nav>
-    </div>
-  </header>
-
     <img class="bg-image" src="{{ asset('frontend/images/SUCCESS.png') }}" alt="Success Background">
   <div class="success-card">
     

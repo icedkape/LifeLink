@@ -15,7 +15,7 @@
         <a class="nav__link" href="{{ url('/') }}">Home</a>
         <a class="nav__link" href="{{ url('/mission') }}">Mission</a>
         <a class="nav__link" href="{{ url('/#lifelinkers') }}">About Us</a>
-        <a class="nav__link" href="{{ url('/register') }}">Register</a>
+        <a class="nav__link" href="{{ url('/faq') }}">FAQ</a>
       </nav>
     </div>
   </header>
@@ -54,6 +54,10 @@
       <button type="submit" class="btn-submit btn-donor" style="margin-top: 20px;">
         Login to Donor Dashboard
       </button>
+
+      <div class="register-link">
+        <a href="{{ url('/register') }}">No account yet? Register here</a>
+      </div>
 
       <div class="login-link">
         <a href="{{ url('/login') }}">← Back to Selection</a>

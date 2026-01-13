@@ -18,7 +18,7 @@
         <a class="nav__link" href="{{ url('/') }}">Home</a>
         <a class="nav__link" href="{{ url('/mission') }}">Mission</a>
         <a class="nav__link" href="{{ url('/#lifelinkers') }}">About Us</a>
-        <a class="nav__link" href="{{ url('/register') }}">Register</a>
+        <a class="nav__link" href="{{ url('/faq') }}">FAQ</a>
       </nav>
     </div>
   </header>

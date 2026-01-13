@@ -19,18 +19,68 @@ body, html {
   padding: 20px 40px;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative; /* Essential for absolute centering the nav */
 }
+
 .header-left { display: flex; align-items: center; gap: 15px; }
 .logo { width: 60px; height: auto; }
 .header-title { display: flex; flex-direction: column; line-height: 1.1; }
 .title-top { font-size: 24px; font-weight: 800; color: #4AA8D0; }
 .title-bottom { font-size: 20px; font-weight: 600; color: #333; }
-.btn-logout { background-color: #940404; color: white; border: none; padding: 10px 30px; border-radius: 25px; font-weight: 700; font-size: 20px; cursor: pointer; transition: background 0.2s; }
-.btn-logout:hover { background-color: #7a0303; }
+
+/* --- NEW: Floating Nav Pill (Blue Theme) --- */
+.nav {
+    /* Layout Position: Perfectly Centered */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Container Style */
+    background-color: #4AA8D0;
+    padding: 12px 40px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Soft Shadow */
+    border: 1px solid #f0f0f0;
+
+    /* Inner Flex Layout */
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+/* Hover Color: Recipient Blue */
+.nav__link:hover {
+    color: #3c7791;
+}
+
+/* Logout Button */
+.btn-logout { 
+    background-color: #4AA8D0; 
+    color: white; 
+    border: none; 
+    padding: 10px 30px; 
+    border-radius: 25px; 
+    font-weight: 700; 
+    font-size: 20px; 
+    cursor: pointer; 
+    transition: background 0.2s; 
+    white-space: nowrap; 
+}
+.btn-logout:hover { background-color: #3f90b2; }
 
 /* --- Main Layout --- */
 .main-container {
-  max-width: 1400px; /* Matching the Compact Donor Layout */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 10px 40px 60px 40px;
   display: flex;
@@ -53,7 +103,6 @@ body, html {
 .banner-text-content { max-width: 60%; z-index: 2; }
 .banner-text-content h1 { font-size: 42px; margin: 0 0 5px 0; font-weight: 900; color: #333; }
 
-/* THEME CHANGE: Blue Highlights */
 .highlight-blue { color: #4AA8D0; }
 .highlight-green { color: #529e57; font-weight: 700; }
 
@@ -62,7 +111,7 @@ body, html {
 
 .profile-pill-static {
   display: inline-block;
-  background-color: #4AA8D0; /* Recipient Blue */
+  background-color: #4AA8D0;
   color: white;
   padding: 10px 30px;
   border-radius: 30px;
@@ -75,16 +124,14 @@ body, html {
     top: 30px;
     right: 30px;
     z-index: 5;
-
-  /* LAYOUT FIX: Makes the link behave like a button box */
-  display: inline-flex;       
-  justify-content: center;    
-  align-items: center;       
-  text-decoration: none;      /* Removes blue underline */
+    display: inline-flex;       
+    justify-content: center;    
+    align-items: center;       
+    text-decoration: none;
 }
 
 .recipient-form-pill {
-    background-color: #4AA8D0; /* Blue Pill */
+    background-color: #4AA8D0;
     color: white;
     padding: 10px 25px;
     border-radius: 20px;
@@ -101,7 +148,7 @@ body, html {
 }
 
 .recipient-form-button-container:hover .recipient-form-pill {
-    background-color: #388bb0; /* Darker Blue on Hover */
+    background-color: #388bb0;
     transform: translateY(-1px);
 }
 
@@ -140,7 +187,6 @@ body, html {
 }
 
 .status-card { background-color: #f3f1ef; }
-/* THEME CHANGE: Blue Matching Card */
 .matching-card { background-color: #4AA8D0; }
 
 .card-content {
@@ -153,26 +199,10 @@ body, html {
 .text-blue { color: #4AA8D0; }
 .white-text { color: white; }
 
-.card-content h2 { 
-  font-size: 40px; 
-  font-weight: 900; 
-  margin: 0 0 8px 0; 
-}
+.card-content h2 { font-size: 40px; font-weight: 900; margin: 0 0 8px 0; }
+.card p { font-size: 16px; margin: 2px 0; font-weight: 600; line-height: 1.3; }
+.card-img { height: 250px; width: auto; object-fit: contain; }
 
-.card p { 
-  font-size: 16px; 
-  margin: 2px 0; 
-  font-weight: 600; 
-  line-height: 1.3; 
-}
-
-.card-img { 
-  height: 250px; 
-  width: auto; 
-  object-fit: contain; 
-}
-
-/* Blue Badge */
 .blue-badge {
   background-color: #4AA8D0;
   color: white;
@@ -224,13 +254,7 @@ body, html {
 .action-item:hover { background-color: #4AA8D0; color: white; padding-left: 25px; }
 
 /* === CHECKLIST COLUMN === */
-.checklist-column { 
-  background-color: #f3f1ef; 
-  border-radius: 15px; 
-  display: flex;
-  flex-direction: column;
-}
-
+.checklist-column { background-color: #f3f1ef; border-radius: 15px; display: flex; flex-direction: column; }
 .checklist-wrapper { padding: 10px 0; flex-grow: 1; }
 .checklist-list { list-style: none; padding: 0; margin: 0; }
 
@@ -252,16 +276,45 @@ body, html {
   cursor: pointer;
   transform: scale(1.2);
 }
-.checklist-item input[type="checkbox"]:checked {
-    accent-color: #4AA8D0; /* Checked items are blue */
-}
+.checklist-item input[type="checkbox"]:checked { accent-color: #4AA8D0; }
 
 .dashboard-footer { background-color: #4AA8D0; color: white; padding: 20px 0; margin-top: 50px; }
 
+/* Responsive Adjustments */
 @media (max-width: 900px) {
+  .dashboard-header { flex-direction: column; gap: 20px; }
+  
+  /* Reset nav for mobile */
+  .nav { 
+      position: static; 
+      transform: none; 
+      box-shadow: none; 
+      border: none; 
+      padding: 10px 0; 
+      flex-wrap: wrap; 
+  }
+
   .gray-banner { flex-direction: column; height: auto; text-align: center; }
   .banner-text-content { max-width: 100%; }
   .banner-illustration { position: relative; right: auto; bottom: auto; height: 180px; margin-top: 20px; }
   .stats-grid, .bottom-grid { grid-template-columns: 1fr; }
   .recipient-form-button-container { position: relative; top: auto; right: auto; margin-top: 10px; margin-bottom: 20px; }
+}
+
+/* ===============================
+   PAGE LOAD ANIMATION
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: fadeInUp 0.8s ease-out forwards;
 }

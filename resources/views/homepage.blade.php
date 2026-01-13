@@ -16,8 +16,8 @@
 
 <div class="page">
 
-  <!-- HEADER -->
-  <header class="topbar">
+<!--HEADER-->
+<header class="topbar">
     <div class="topbar__inner">
       <a class="brand" href="{{ url('/') }}">
         <img class="brand__logo" src="{{ asset('frontend/images/LOGO.png') }}" alt="LifeLink Logo">
@@ -25,29 +25,43 @@
 
       <nav class="nav">
         <a class="nav__link" href="{{ url('/') }}">Home</a>
-        <a class="nav__link" href="{{ url('/register') }}">Register</a>
         <a class="nav__link" href="{{ url('/mission') }}">Mission</a>
         <a class="nav__link" href="{{ url('/#lifelinkers') }}">About Us</a>
-        <a class="nav__link" href="{{ url('/login') }}">Login</a>
         <a class="nav__link" href="{{ url('/faq') }}">FAQ</a>
       </nav>
 
-      <div class="topbar__right">
-        <div class="topbar__contact">
-          <div class="contact-num">(+63) 9123 4567 890</div>
-          <div class="call-who">Find Dr. Juan Dela Cruz</div>
+      @guest
+        <div class="topbar__right">
+            <a class="btn btn--primary" href="{{ url('/register') }}">Sign Up</a>
+            <a class="btn btn--primary" href="{{ url('/login') }}">Login</a>
         </div>
+      @endguest
 
-        <a class="btn btn--primary" href="{{ url('/register') }}">Sign Up</a>
+      @auth
+        <div class="user-dropdown">
+          <button class="btn btn--primary dropdown-trigger">
+            Welcome, {{ Auth::user()->name }}! ▾
+          </button>
+          
+          <div class="dropdown-menu">
+            @if(Auth::user()->role == 'donor')
+                <a href="{{ route('donor.dashboard') }}" class="dropdown-item">Donor Dashboard</a>
+            @elseif(Auth::user()->role == 'recipient')
+                <a href="{{ route('recipient.dashboard') }}" class="dropdown-item">Recipient Dashboard</a>
+            @elseif(Auth::user()->role == 'admin')
+                <a href="{{ route('admin.dashboard') }}" class="dropdown-item">Admin Dashboard</a>
+            @else
+                <a href="{{ route('donor.dashboard') }}" class="dropdown-item">My Dashboard</a>
+            @endif
 
-        <button class="icon-btn" type="button" onclick="openGmailInquiry()">
-          <img src="{{ asset('frontend/images/search-icon.png') }}" alt="Search">
-        </button>
+            <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
+              @csrf
+              <button type="submit" class="dropdown-item logout-btn">Logout</button>
+            </form>
+          </div>
+        </div>
+      @endauth
 
-        <button class="icon-btn" type="button" onclick="window.location.href='{{ url('/coming-soon') }}'">
-          <img src="{{ asset('frontend/images/ringer-icon.png') }}" alt="Ringer">
-        </button>
-      </div>
     </div>
   </header>
 
@@ -85,13 +99,11 @@
           We streamline the donation process — from registration to transplant — ensuring every gift of life reaches its perfect match.
         </p>
 
-        <a class="btn btn--primary btn--lg" href="{{ url('/register') }}">Register Here</a>
-
         <!-- TRUST ROW under Register Here -->
         <div class="hero-divider"></div>
         <div class="trust-section">
           <img src="{{ $img('Group 28.png') }}" alt="Trust" class="trust-section__image">
-          <div class="trust-section__text">One of the Most Trusted Organ Donation Company</div>
+          <div class="trust-section__text">One of the Most Trusted Organ Donation Companies</div>
         </div>
       </div>
 

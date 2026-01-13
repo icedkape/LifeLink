@@ -15,7 +15,7 @@
         <a class="nav__link" href="{{ url('/') }}">Home</a>
         <a class="nav__link" href="{{ url('/mission') }}">Mission</a>
         <a class="nav__link" href="{{ url('/#lifelinkers') }}">About Us</a>
-        <a class="nav__link" href="{{ url('/register') }}">Register</a>
+        <a class="nav__link" href="{{ url('/faq') }}">FAQ</a>
       </nav>
     </div>
   </header>
@@ -54,6 +54,10 @@
       <button type="submit" class="btn-submit btn-recipient" style="margin-top: 20px;">
         Login to Recipient Dashboard
       </button>
+
+      <div class="register-link link-blue">
+        <a href="{{ url('/register') }}">No account yet? Register here</a>
+      </div>
 
       <div class="login-link link-blue">
         <a href="{{ url('/login') }}">← Back to Selection</a>

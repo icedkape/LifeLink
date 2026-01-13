@@ -17,6 +17,14 @@
         <span class="title-bottom">Dashboard</span>
       </div>
     </div>
+
+    <nav class="nav">
+        <a class="nav__link" href="{{ url('/') }}">Home</a>
+        <a class="nav__link" href="{{ url('/mission') }}">Mission</a>
+        <a class="nav__link" href="{{ url('/#lifelinkers') }}">About Us</a>
+        <a class="nav__link" href="{{ url('/faq') }}">FAQ</a>
+    </nav>
+
     <button type="button" class="btn-logout" onclick="window.location.href='{{ route('login') }}'">
       Logout
     </button>
@@ -128,29 +136,19 @@
   <footer class="dashboard-footer"></footer>
 
   <script>
-    // UPDATED: Coordinator Email Logic
     function contactCoordinator() { 
         alert("📧 Contact Coordinator:\ncoordinator@lifelink.com\n\nClick OK to open email.");
         var gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=coordinator@lifelink.com&su=" + encodeURIComponent("Coordinator Inquiry - LifeLink");
         window.open(gmailUrl, "_blank");
     }
 
-    // Checklist Memory Script
     document.addEventListener("DOMContentLoaded", function() {
       const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-      
-      // Load saved state
       checkboxes.forEach(box => {
         const savedState = localStorage.getItem(box.id);
-        if (savedState === 'true') {
-          box.checked = true;
-        } else if (savedState === 'false') {
-          box.checked = false;
-        }
-      });
-
-      // Save state on click
-      checkboxes.forEach(box => {
+        if (savedState === 'true') box.checked = true;
+        else if (savedState === 'false') box.checked = false;
+        
         box.addEventListener('change', function() {
           localStorage.setItem(this.id, this.checked);
         });

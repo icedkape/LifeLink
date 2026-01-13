@@ -187,6 +187,9 @@ body, html {
 /* Donor Button (Red) */
 .btn-donor {
   background-color: #940404;
+  border-radius: 30px;
+  font-family: inherit;
+
 }
 .btn-donor:hover {
   background-color: #7a0303;
@@ -196,13 +199,31 @@ body, html {
 /* Recipient Button (Dark Blue) */
 .btn-recipient {
   background-color: #0a1b39;
+  border-radius: 30px;
+  font-family: inherit;
 }
+
 .btn-recipient:hover {
   background-color: #050e1f;
   transform: translateY(-2px);
 }
 
 /* --- Bottom Links --- */
+.register-link {
+  text-align: center;
+}
+
+.register-link a {
+  color: #940404;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.register-link a:hover { text-decoration: underline; }
+
+
+
 .login-link {
   text-align: center;
 }

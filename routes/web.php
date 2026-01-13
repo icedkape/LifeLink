@@ -34,6 +34,28 @@ Route::get('/consent-docs', function () { return view('consent-docs'); });
 Route::get('/coming-soon', function () { return view('coming-soon'); });
 
 
+// ... inside Auth Routes section ...
+
+// 1. Forgot Password Page
+Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+})->name('password.request');
+
+// 2. Email Sent Page
+Route::get('/email-sent', function () {
+    return view('auth.email-sent');
+})->name('email.sent');
+
+// 3. Email Verification Page
+Route::get('/email-verification', function () {
+    return view('auth.email-verification');
+})->name('otp.verify');
+
+// 4. Reset Password Page (UPDATED)
+Route::get('/reset-password', function () {
+    return view('auth.reset-password');
+})->name('password.reset');
+
 // ==========================================
 // 2. LOGIN FLOW (New Structure)
 // ==========================================
@@ -62,6 +84,12 @@ Route::post('/recipient-login', function (Request $request) {
     // Logic to verify Recipient credentials would go here
     return redirect('/recipient/dashboard');
 })->name('login.recipient.post');
+
+// LOGOUT ROUTE
+Route::post('/logout', function () {
+    Auth::logout(); // Logs the user out
+    return redirect('/'); // Redirects back to Homepage
+})->name('logout');
 
 
 // ==========================================

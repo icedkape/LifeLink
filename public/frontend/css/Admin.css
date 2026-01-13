@@ -25,6 +25,41 @@ body, html {
 .header-title { display: flex; flex-direction: column; line-height: 1.1; }
 .title-top { font-size: 24px; font-weight: 800; color: #529E57; } /* Admin Green */
 .title-bottom { font-size: 20px; font-weight: 600; color: #333; }
+
+/* --- NEW: Floating Nav Pill --- */
+.nav {
+    /* Layout Position: Perfectly Centered */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Container Style */
+    background-color: #529E57;
+    padding: 12px 40px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Soft Shadow */
+    border: 1px solid #f0f0f0;
+
+    /* Inner Flex Layout */
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+    color: #294f2c;
+}
+
 .btn-logout { background-color: #529E57; color: white; border: none; padding: 10px 30px; border-radius: 25px; font-weight: 700; font-size: 20px; cursor: pointer; transition: background 0.2s; }
 .btn-logout:hover { background-color: #407a44; }
 

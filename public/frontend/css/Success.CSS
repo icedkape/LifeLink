@@ -26,48 +26,6 @@ body, html {
 }
 
 /* ===============================
-   NAVBAR (Same as Register)
-================================= */
-.topbar {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  transform: translateX(-50%);
-  width: auto;
-  z-index: 50;
-  white-space: nowrap;
-}
-
-.topbar__inner {
-  display: inline-flex;
-  align-items: center;
-  gap: 24px;
-  background: #f3f1ef;
-  border-radius: 20px;
-  padding: 12px 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.brand__logo { width: 140px; height: auto; display: block; }
-
-.nav { display: flex; gap: 20px; align-items: center; }
-.nav__link {
-  text-decoration: none;
-  color: #111;
-  font-weight: 700;
-  font-size: 15px;
-  font-family: 'Inter', sans-serif;
-  transition: color 0.2s ease;
-}
-.nav__link:hover { color: #c53f3f; }
-
-@media (max-width: 900px) {
-  .topbar { left: 50%; transform: translateX(-50%); width: 90%; }
-  .topbar__inner { justify-content: center; width: 100%; }
-  .nav { display: none; }
-}
-
-/* ===============================
    SUCCESS CARD
 ================================= */
 .success-card {
@@ -78,7 +36,7 @@ body, html {
   
   width: 100%;
   max-width: 550px; /* Narrower than Register for a cleaner look */
-  height: 90vh;
+  height: 80vh;
   
   background: #ffffff;
   border-radius: 16px;
@@ -140,7 +98,7 @@ body, html {
   background-color: #940404;
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 30px;
   font-size: 16px;
   font-weight: 700;
   margin-top: 10px;

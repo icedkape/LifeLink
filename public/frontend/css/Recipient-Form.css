@@ -197,3 +197,21 @@ button:hover, .btn-blue-solid:hover { opacity: 0.8; transform: translateY(-2px);
   .header-titles { display: none; }
   .form-actions { flex-direction: column; gap: 20px; }
 }
+
+/* ===============================
+   PAGE LOAD ANIMATION
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: fadeInUp 0.8s ease-out forwards;
+}

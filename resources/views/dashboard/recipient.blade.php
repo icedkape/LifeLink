@@ -17,6 +17,14 @@
         <span class="title-bottom">Dashboard</span>
       </div>
     </div>
+
+    <nav class="nav">
+        <a class="nav__link" href="{{ url('/') }}">Home</a>
+        <a class="nav__link" href="{{ url('/mission') }}">Mission</a>
+        <a class="nav__link" href="{{ url('/#lifelinkers') }}">About Us</a>
+        <a class="nav__link" href="{{ url('/faq') }}">FAQ</a>
+    </nav>
+
     <button type="button" class="btn-logout" onclick="window.location.href='{{ route('login') }}'">
       Logout
     </button>
@@ -125,22 +133,16 @@
   <footer class="dashboard-footer"></footer>
 
   <script>
-    // 1. Waitlist Alert
     function showWaitlistInfo() {
         alert("Waitlist Information\n\nYour waitlist status will be announced via your registered email.\n\nWe will notify you as soon as a match becomes available.");
     }
 
-    // 2. UPDATED: Coordinator Email Logic
     function openCoordinatorEmail() {
-        // Matches the text in your screenshot perfectly
         alert("📧 Contact Coordinator:\ncoordinator@lifelink.com\n\nClick OK to open email.");
-        
-        // Opens Gmail compose window to the specific email
         var gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=coordinator@lifelink.com&su=" + encodeURIComponent("Coordinator Inquiry - LifeLink");
         window.open(gmailUrl, "_blank");
     }
 
-    // 3. Checklist Memory
     document.addEventListener("DOMContentLoaded", function() {
       const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
       checkboxes.forEach(box => {

@@ -19,13 +19,62 @@ body, html {
   padding: 20px 40px;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative; /* Essential for absolute centering the nav */
 }
+
 .header-left { display: flex; align-items: center; gap: 15px; }
 .logo { width: 60px; height: auto; }
 .header-title { display: flex; flex-direction: column; line-height: 1.1; }
 .title-top { font-size: 24px; font-weight: 800; color: #c53f3f; }
 .title-bottom { font-size: 20px; font-weight: 600; color: #333; }
-.btn-logout { background-color: #940404; color: white; border: none; padding: 10px 30px; border-radius: 25px; font-weight: 700; font-size: 20px; cursor: pointer; transition: background 0.2s; }
+
+/* --- NEW: Floating Nav Pill --- */
+.nav {
+    /* Layout Position: Perfectly Centered */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Container Style */
+    background-color: #940404;
+    padding: 12px 40px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Soft Shadow */
+    border: 1px solid #f0f0f0;
+
+    /* Inner Flex Layout */
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+    color: #adaaaa;
+}
+
+/* Logout Button */
+.btn-logout { 
+    background-color: #940404; 
+    color: white; 
+    border: none; 
+    padding: 10px 30px; 
+    border-radius: 25px; 
+    font-weight: 700; 
+    font-size: 18px; 
+    cursor: pointer; 
+    transition: background 0.2s; 
+    white-space: nowrap; 
+}
 .btn-logout:hover { background-color: #7a0303; }
 
 /* --- Main Layout --- */
@@ -38,31 +87,20 @@ body, html {
 }
 
 /* === BANNER SECTION === */
-.welcome-banner-wrapper {
-  position: relative;
-}
+.welcome-banner-wrapper { position: relative; }
 
 .gray-banner {
   background-color: #f3f1ef;
   border-radius: 20px;
-  padding: 30px 50px; /* Reduced padding */
+  padding: 30px 50px;
   position: relative;
   min-height: 220px;
   display: flex;
   align-items: center;
 }
 
-.banner-text-content {
-  max-width: 60%;
-  z-index: 2;
-}
-
-.banner-text-content h1 {
-  font-size: 42px;
-  margin: 0 0 5px 0;
-  font-weight: 900;
-  color: #333;
-}
+.banner-text-content { max-width: 60%; z-index: 2; }
+.banner-text-content h1 { font-size: 42px; margin: 0 0 5px 0; font-weight: 900; color: #333; }
 
 .highlight-red { color: #c53f3f; }
 .highlight-green { color: #529e57; font-weight: 700; }
@@ -81,19 +119,14 @@ body, html {
 }
 
 .top-right-btn {
-  /* Positioning (Keeps it in the top right corner) */
   position: absolute;
   top: 30px;
   right: 30px;
   z-index: 5;
-
-  /* LAYOUT FIX: Makes the link behave like a button box */
   display: inline-flex;       
   justify-content: center;    
   align-items: center;       
-  text-decoration: none;      /* Removes blue underline */
-
-  /* Visual Styling */
+  text-decoration: none;
   background-color: #008000;
   color: white;
   border: none;
@@ -102,23 +135,12 @@ body, html {
   font-weight: 800;
   font-size: 17px;
   cursor: pointer;
-
-  /* Shadow & Transition */
-  box-shadow: inset 0 4px 8px rgba(0,0,0,0.10),
-              inset 0 -2px 4px rgba(255,255,255,0.60);
+  box-shadow: inset 0 4px 8px rgba(0,0,0,0.10), inset 0 -2px 4px rgba(255,255,255,0.60);
   transition: transform .15s ease, background .2s ease;
 }
 
-/* Hover Effect */
-.top-right-btn:hover {
-  background-color: #006400;
-  transform: translateY(-1px);
-}
-
-/* Click Effect */
-.top-right-btn:active {
-  transform: translateY(0px) scale(0.98);
-}
+.top-right-btn:hover { background-color: #006400; transform: translateY(-1px); }
+.top-right-btn:active { transform: translateY(0px) scale(0.98); }
 
 .banner-illustration {
   position: absolute;
@@ -130,19 +152,19 @@ body, html {
   z-index: 1;
 }
 
-/* === STATS GRID (COMPACT UPDATES) === */
+/* === STATS GRID === */
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  margin-top: 25px; /* Reduced from 50px */
+  margin-top: 25px;
   margin-bottom: 25px;
 }
 
 .card {
   border-radius: 20px;
-  padding: 25px; /* Reduced from 30px */
-  height: 190px; /* Reduced from 220px for compactness */
+  padding: 25px;
+  height: 190px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -152,36 +174,14 @@ body, html {
 .status-card { background-color: #f3f1ef; }
 .impact-card { background-color: #c53f3f; }
 
-.card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-
-.card-content h2 { 
-  font-size: 40px; 
-  font-weight: 900; 
-  margin: 0 0 8px 0; 
-  color: #c53f3f; 
-}
+.card-content { display: flex; flex-direction: column; justify-content: center; height: 100%; }
+.card-content h2 { font-size: 40px; font-weight: 900; margin: 0 0 8px 0; color: #c53f3f; }
 .impact-card .card-content h2 { color: white; }
 .white-text { color: white; }
 
-.card p { 
-  font-size: 16px; 
-  margin: 2px 0; 
-  font-weight: 600; 
-  line-height: 1.3; 
-}
+.card p { font-size: 16px; margin: 2px 0; font-weight: 600; line-height: 1.3; }
+.card-img { height: 250px; width: auto; object-fit: contain; }
 
-.card-img { 
-  height: 250px; /* Reduced image size */
-  width: auto; 
-  object-fit: contain; 
-}
-
-/* New Inner Badge for "Next Review" */
 .inner-review-badge {
   background-color: #c53f3f;
   color: white;
@@ -189,7 +189,7 @@ body, html {
   border-radius: 20px;
   font-size: 20px;
   font-weight: 800;
-  margin-top: 15px; /* Space from text */
+  margin-top: 15px;
   display: inline-block;
   width: fit-content;
 }
@@ -231,70 +231,55 @@ body, html {
 }
 .action-item:hover { background-color: #c53f3f; color: white; padding-left: 25px; }
 
+/* === CHECKLIST === */
+.checklist-column { background-color: #f3f1ef; border-radius: 15px; display: flex; flex-direction: column; }
+.checklist-wrapper { padding: 10px 0; flex-grow: 1; }
+.checklist-list { list-style: none; padding: 0; margin: 0; }
+.checklist-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; transition: background-color 0.2s; cursor: pointer; }
+.checklist-item:hover { background-color: rgba(0,0,0,0.03); }
+.item-text { font-size: 18px; font-weight: 600; color: #333; }
 
-/* === CHECKLIST COLUMN STYLES === */
-.checklist-column { 
-  background-color: #f3f1ef; 
-  border-radius: 15px; 
-  display: flex;
-  flex-direction: column;
-}
-
-.checklist-wrapper { 
-  padding: 10px 0; 
-  flex-grow: 1;
-}
-
-/* Remove default list styling */
-.checklist-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Individual Row Styling */
-.checklist-item {
-  display: flex;
-  justify-content: space-between; /* Pushes text left, box right */
-  align-items: center; /* Vertically centers them */
-  padding: 15px 30px; /* Space inside the row */
-  transition: background-color 0.2s;
-  cursor: pointer; /* Indicates interactivity */
-}
-
-/* Hover effect for rows */
-.checklist-item:hover {
-  background-color: rgba(0,0,0,0.03);
-}
-
-/* Text Styling */
-.item-text {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Checkbox Styling */
-.checklist-item input[type="checkbox"] { 
-  width: 24px; 
-  height: 24px; 
-  accent-color: #999; /* Grey color when checked, similar to image */
-  cursor: pointer;
-  transform: scale(1.2); /* Make it slightly bigger */
-}
-
-/* If you prefer the green checkmark from previous designs, change #999 to green */
-.checklist-item input[type="checkbox"]:checked {
-    accent-color: #28a745; /* Optional: Makes checked items green */
-}
+.checklist-item input[type="checkbox"] { width: 24px; height: 24px; accent-color: #999; cursor: pointer; transform: scale(1.2); }
+.checklist-item input[type="checkbox"]:checked { accent-color: #28a745; }
 
 .dashboard-footer { background-color: #940404; color: white; padding: 20px 0; margin-top: 50px; }
-.footer-content { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; font-weight: 700; font-size: 18px; }
 
+/* Responsive Adjustments */
 @media (max-width: 900px) {
+  .dashboard-header { flex-direction: column; gap: 20px; }
+  
+  /* Reset nav for mobile */
+  .nav { 
+      position: static; 
+      transform: none; 
+      box-shadow: none; 
+      border: none; 
+      padding: 10px 0; 
+      flex-wrap: wrap; 
+  }
+  
   .gray-banner { flex-direction: column; height: auto; text-align: center; }
   .banner-text-content { max-width: 100%; }
   .banner-illustration { position: relative; right: auto; bottom: auto; height: 180px; margin-top: 20px; }
   .stats-grid, .bottom-grid { grid-template-columns: 1fr; }
   .top-right-btn { position: relative; top: auto; right: auto; margin-top: 10px; margin-bottom: 20px; }
+}
+
+/* ===============================
+   PAGE LOAD ANIMATION
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* End in natural position */
+  }
+}
+
+/* Apply to the whole page */
+body {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
